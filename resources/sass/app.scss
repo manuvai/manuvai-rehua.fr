@@ -1,1 +1,21 @@
-//
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+.custom-wrapper {
+    padding-top: 60px;
+    min-height: calc(100vh - 60px);
+}
+
+nav.navbar {
+    height: 60px;
+}
+
+body {
+    min-height: 100vh;
+}

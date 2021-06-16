@@ -6,7 +6,10 @@ import VueRouter from 'vue-router';
 Vue.use(VueRouter);
 import Home from './components/HomeComponent.vue';
 import Portfolio from './components/PortfolioComponent.vue';
+import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
 
+Vue.use(BootstrapVue)
+Vue.use(BootstrapVueIcons)
 const routes = [
     {
         path: '/',

@@ -16,7 +16,7 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
+                    <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
                             
                             <router-link  class="nav-link" to="/#about">&Agrave; propos</a>
@@ -28,7 +28,11 @@
                         <li class="nav-item">
                             
                             <router-link  class="nav-link" to="/#portfolio">Portfolio</a>
-                            </li>
+                        </li>
+                        <li class="nav-item">
+                            
+                            <router-link  class="nav-link" to="/#experiences">Exp&eacute;riences</a>
+                        </li>
                         <li class="nav-item">
                             <router-link  class="nav-link" to="/#contact">Contact</a>
                         </li>
@@ -40,7 +44,11 @@
                 <router-view/>
 
             </div>
-
+            <footer class="d-flex justify-content-center pt-2">
+                <p>
+                    Site d&eacute;velopp&eacute; par Manuvai REHUA &copy; 2021
+                </p>
+            </footer>
         </div>
         <script src="{{ asset('js/app.js') }}"></script>
     </body>

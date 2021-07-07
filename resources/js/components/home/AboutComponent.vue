@@ -28,3 +28,9 @@ export default {
     }
 }
 </script>
+<style lang="scss" scoped>
+
+.custom-wrapper {
+    background-color: white;
+}
+</style>

@@ -10942,11 +10942,6 @@ a.text-dark:focus {
   }
 }
 
-.custom-wrapper {
-  padding-top: 60px;
-  min-height: calc(100vh - 60px);
-}
-
 nav.navbar {
   height: 60px;
   background-color: #4056F4 !important;
@@ -10967,6 +10962,21 @@ nav.navbar a {
 }
 
 body {
+  min-height: 100vh;
+  -ms-scroll-snap-type: y mandatory;
+      scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  background: white;
+  background: linear-gradient(180deg, white 0%, #d9d9f6 85%, #c1d4fe 100%);
+}
+
+.custom-wrapper {
+  padding-top: 60px;
+  min-height: calc(100vh);
+  scroll-snap-align: start;
+}
+
+.container {
   min-height: 100vh;
 }
 

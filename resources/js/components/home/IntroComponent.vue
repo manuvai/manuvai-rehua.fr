@@ -49,4 +49,8 @@ export default {
     background-size: cover;
     background-position: 80% 70%;
 }
+
+.custom-wrapper {
+    background-color: white;
+}
 </style>

@@ -7,10 +7,6 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-.custom-wrapper {
-    padding-top: 60px;
-    min-height: calc(100vh - 60px);
-}
 
 nav.navbar {
     height: 60px;
@@ -31,6 +27,20 @@ nav.navbar {
 }
 
 body {
+    min-height: 100vh;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(217,217,246,1) 85%, rgba(193,212,254,1) 100%);
+}
+
+.custom-wrapper {
+    padding-top: 60px;
+    min-height: calc(100vh);
+    scroll-snap-align: start;
+}
+
+.container {
     min-height: 100vh;
 }
 

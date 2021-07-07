@@ -21,9 +21,6 @@
                                 {{config.mail}}
                             </a>
                         </div>
-                        <div class="col-sm">
-                            One of three columns
-                        </div>
                     </div>
                 </div>
             </div>
@@ -37,3 +34,8 @@ export default {
     }
 }
 </script>
+<style lang="scss" scoped>
+.custom-wrapper {
+    background-color: white;
+}
+</style>

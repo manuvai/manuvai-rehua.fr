@@ -5,7 +5,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 Vue.use(VueRouter);
 import Home from './components/HomeComponent.vue';
-import Portfolio from './components/PortfolioComponent.vue';
+import Projects from './components/ProjectsComponent.vue';
 import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
 
 Vue.use(BootstrapVue)
@@ -16,8 +16,8 @@ const routes = [
         component: Home
     },
     {
-        path: '/portfolio',
-        component: Portfolio
+        path: '/projects',
+        component: Projects
     },
 ];
 

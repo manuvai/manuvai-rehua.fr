@@ -39,4 +39,7 @@ export default {
         opacity: 1;
     }
 }
+.custom-wrapper {
+    background-color: white;
+}
 </style>

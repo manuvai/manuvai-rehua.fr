@@ -4,7 +4,7 @@
         <About :config="config" />
         <Skills :config="config" />
         <Portfolio :config="config" :data="portfolioData" />
-        <Experiences :config="config" />
+        <Experiences :config="config" :experiences="experiences"/>
         <Contact :config="config" />
     </div>
 </template>
@@ -86,6 +86,88 @@
                                 <li>Gestion base de donn&eacute;es</li>
                                 <li>Ajax</li>
                             </ul>`,
+                    },
+                ],
+                experiences: [
+                    {
+                        name: 'Développeur web', 
+                        company: 'Vodafone Polynésie', 
+                        date_start: '2020-11-02', 
+                        date_end: '2020-10-31', 
+                        desc: `Correction et ajout de nouvelles fonctionnalités sur la plateforme de jeux de Vodafone.`, 
+                        type: 'job'
+                    },
+                    {
+                        name: 'Stagiaire analyste développeur informatique', 
+                        company: 'Vodafone Polynésie', 
+                        date_start: '2020-07-01', 
+                        date_end: '2020-08-31', 
+                        desc: `Correction et intégration de trois jeux multijoueurs sur la plateforme de jeux de Vodafone.<br /> Développement de nouvelles fonctionnalités sur la plateforme de jeux.<br /> Méthodologie Agile Scrum.<br /> Environnement : <br /> - Git, GitHub, SonarQube.<br />  - Google Analytics, SendGrid.<br />`, 
+                        type: 'internship'
+                    },
+                    {
+                        name: 'Moniteur étudiant - DSI', 
+                        company: 'Université de la Polynésie française, Punaauia', 
+                        date_start: '2020-09-01', 
+                        date_end: '2020-08-31', 
+                        desc: `Assistance auprès des étudiants du campus pour l’utilisation des postes et imprimantes.<br /> Gestion de la maintenance et prêt d’ordinateurs portables (Kaspersky Endpoint Security).<br />`, 
+                        type: 'job'
+                    },
+                    {
+                        name: 'Stagiaire analyste développeur informatique', 
+                        company: 'Vodafone Polynésie', 
+                        date_start: '2020-04-01', 
+                        date_end: '2020-05-22', 
+                        desc: ` Adaptation d\'un jeu en multijoueur (application Web) <br /> - Backend: PHP7.0.33, 10.3.23-MariaDB, Apache2 <br /> - Frontend: HTML/CSS, JavaScript, EaselJS <br /> - Méthodologie Agile: Scrum`, 
+                        type: 'internship'
+                    },
+                    {
+                        name: 'Participation au FenuaH24 - DSI', 
+                        company: 'Université de la Polynésie française, Punaauia', 
+                        date_start: '2020-01-18', 
+                        date_end: '2020-01-30', 
+                        desc: ` Scénario de gestion de crise d\'une entreprise et pratique de la cyberdéfense.<br /> Environnement :<br /> - FortiClient, GLPI.<br />`, 
+                        type: 'job'
+                    },
+                    {
+                        name: 'Stagiaire informatique', 
+                        company: 'Vini Vini Mareyage, Papeete - Port de pêche', 
+                        date_start: '2019-12-15', 
+                        date_end: '2020-01-11', 
+                        desc: `Développement de nouveaux modules pour l’ERP de l’entreprise :<br/> - Ajout de filigrane pour les documents comptables.<br/> Environnement :<br/> - Odoo (OpenERP), VBA.<br />`, 
+                        type: 'internship'
+                    },
+                    {
+                        name: 'Stagiaire informatique', 
+                        company: 'Vini Vini Mareyage, Papeete - Port de pêche', 
+                        date_start: '2019-06-22', 
+                        date_end: '2020-08-15', 
+                        desc: ` Développement de nouveaux modules pour l’ERP de l’entreprise :<br /> - Ajout des conditions d’achats sur les factures et devis.<br /> Environnement :<br /> - Odoo (OpenERP), VBA.<br /> - PostgreSQL, CentOS server, PRTG network monitor.<br />`, 
+                        type: 'internship'
+                    },
+                    {
+                        name: 'Participation au CyberFenua', 
+                        company: 'DGEN, Papeete', 
+                        date_start: '2018-10-01', 
+                        date_end: '2018-10-04', 
+                        desc: `Scénario de gestion de crise de la Polynésie française en pleine intempérie mondiale.<br /> Prévention auprès des personnes sur les attaques de cybercriminels.<br />`, 
+                        type: 'job'
+                    },
+                    {
+                        name: 'Licence informatique', 
+                        company: 'Université de la Polynésie française', 
+                        date_start: '2017-09-01', 
+                        date_end: '2020-08-31', 
+                        desc: ` <ul>     <li>Langages :         <ul>             <li>Python, Java, PHP, C</li>         </ul>     </li>     <li>IDE :         <ul>             <li>Android studio, Eclipse</li>         </ul>     </li>     <li>SGBD :         <ul>             <li>MySQL, Oracle</li>         </ul>     </li> </ul>`, 
+                        type: 'cursus'
+                    },
+                    {
+                        name: 'Baccalauréat Général Scientifique', 
+                        company: 'Lycée Polyvalent de Taaone', 
+                        date_start: '2015-08-12', 
+                        date_end: '2017-06-30', 
+                        desc: ``, 
+                        type: 'cursus'
                     },
                 ]
             }

@@ -1,41 +1,95 @@
 <template>
-    <div class="custom-wrapper" id="contact">
-        <div class="row">
-            <div class="col-md-10 offset-md-2 mt-2">
-                <h2 class="display-4">Contact</h2>
-                <div class="container">
-                    <div class="row text-center">
-                        <div class="col-sm">
-                            <a :href="'tel:' + config.tel">
-                                <span class="h1">
-                                    <b-icon icon="telephone" width="50px" style="color: #161b22;"></b-icon>
-                                </span><br>
-                                {{config.tel}}
-                            </a>
-                        </div>
-                        <div class="col-sm">
-                            <a :href="'mailto:' + config.mail">
-                                <span class="h1">
-                                    <b-icon icon="envelope" width="50px" style="color: #161b22;"></b-icon>
-                                </span><br>
-                                {{config.mail}}
-                            </a>
-                        </div>
-                    </div>
-                </div>
+  <div class="custom-wrapper" id="contact">
+    <div class="container">
+      <h2 class="display-4">Contact</h2>
+      <div class="row">
+        <div class="columns col-sm-4 col-xs-6">
+          <div class="row text-center align-items-center">
+            <div class="col-sm-12">
+              <a :href="'tel:' + config.tel">
+                <span class="h1">
+                  <b-icon
+                    icon="telephone"
+                    width="50px"
+                    style="color: #161b22"
+                  ></b-icon> </span
+                ><br />
+                {{ config.tel }}
+              </a>
             </div>
+            <div class="col-sm-12">
+              <a :href="'mailto:' + config.mail">
+                <span class="h1">
+                  <b-icon
+                    icon="envelope"
+                    width="50px"
+                    style="color: #161b22"
+                  ></b-icon> </span
+                ><br />
+                {{ config.mail }}
+              </a>
+            </div>
+          </div>
         </div>
+        <div class="columns col-sm-8 col-xs-6">
+          <l-map
+            :zoom="zoom"
+            :center="center"
+            :options="mapOptions"
+            style="height: 50vh"
+            @update:center="centerUpdate"
+            @update:zoom="zoomUpdate"
+          >
+            <l-tile-layer :url="url" :attribution="attribution" />
+            <l-marker :lat-lng="markerCoords">
+            </l-marker>
+          </l-map>
+        </div>
+      </div>
     </div>
+  </div>
 </template>
 <script>
+import "leaflet/dist/leaflet.css";
+import { latLng } from "leaflet";
+import { LMap, LTileLayer, LMarker, LPopup, LTooltip } from "vue2-leaflet";
+
 export default {
-    props: {
-        config: {}
-    }
-}
+  data() {
+    return {
+      zoom: 13,
+      center: latLng(-17.5923, -149.6086),
+      url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+      attribution:
+        '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+      markerCoords: latLng(-17.5923, -149.6086),
+      currentZoom: 11.5,
+      currentCenter: latLng(-17.5923, -149.6086),
+      mapOptions: {
+        zoomSnap: 0.5,
+      },
+    };
+  },
+  components: {
+    LMap,
+    LTileLayer,
+    LMarker,
+  },
+  props: {
+    config: {},
+  },
+  methods: {
+    zoomUpdate(zoom) {
+      this.currentZoom = zoom;
+    },
+    centerUpdate(center) {
+      this.currentCenter = center;
+    },
+  },
+};
 </script>
 <style lang="scss" scoped>
 .custom-wrapper {
-    background-color: white;
+  background-color: white;
 }
 </style>

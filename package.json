@@ -27,7 +27,9 @@
         "bootstrap-vue": "^2.21.2",
         "easy-circular-progress": "^1.0.4",
         "laravel-vue-pagination": "^2.3.1",
+        "leaflet": "^1.7.1",
         "moment": "^2.29.1",
-        "vue-router": "^3.5.1"
+        "vue-router": "^3.5.1",
+        "vue2-leaflet": "^2.7.1"
     }
 }

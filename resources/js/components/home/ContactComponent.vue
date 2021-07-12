@@ -1,7 +1,11 @@
 <template>
   <div class="custom-wrapper" id="contact">
     <div class="container">
-      <h2 class="display-4 ml-2">Contact</h2>
+      <div class="row">
+        <div class="col-md-10 offset-md-1 mt-2">
+          <h2 class="display-4">Contact</h2>
+        </div>
+      </div>
       <div class="row">
         <div class="columns col-sm-4 col-xs-6">
           <div class="row text-center align-items-center">
@@ -36,13 +40,12 @@
             :zoom="zoom"
             :center="center"
             :options="mapOptions"
-            style="height: 50vh"
+            style="height: 60vh"
             @update:center="centerUpdate"
             @update:zoom="zoomUpdate"
           >
             <l-tile-layer :url="url" :attribution="attribution" />
-            <l-marker :lat-lng="markerCoords">
-            </l-marker>
+            <l-marker :lat-lng="markerCoords"> </l-marker>
           </l-map>
         </div>
       </div>

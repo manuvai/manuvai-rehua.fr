@@ -10944,20 +10944,37 @@ a.text-dark:focus {
 
 nav.navbar {
   height: 60px;
+  background-color: #efefef !important;
+  color: #222 !important;
+  box-shadow: 0px 1px 15px 0px rgba(0, 0, 0, 0.25);
+  transition: background-color 1s;
+}
+
+nav.navbar.active {
   background-color: #4056F4 !important;
+  color: white !important;
+}
+
+nav.navbar.active .navbar-collapse {
+  background-color: #4056F4 !important;
+}
+
+nav.navbar.active a {
   color: white !important;
 }
 
 nav.navbar a {
-  color: white !important;
+  color: #222 !important;
+  transition: color 1s;
 }
 
-#navbarNav {
-  background-color: #4056F4 !important;
-  color: white !important;
+nav.navbar .navbar-collapse {
+  background-color: #efefef !important;
+  color: #222 !important;
+  transition: background-color 1s;
 }
 
-#navbarNav ul {
+nav.navbar .navbar-collapse ul {
   margin: 10px;
 }
 
@@ -10982,7 +10999,7 @@ body {
 
 footer {
   min-height: 10vh;
-  background-color: #7d9cf1;
+  background-color: #3B578E;
   color: white;
 }
 

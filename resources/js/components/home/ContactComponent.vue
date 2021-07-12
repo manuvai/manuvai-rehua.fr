@@ -1,7 +1,7 @@
 <template>
   <div class="custom-wrapper" id="contact">
     <div class="container">
-      <h2 class="display-4">Contact</h2>
+      <h2 class="display-4 ml-2">Contact</h2>
       <div class="row">
         <div class="columns col-sm-4 col-xs-6">
           <div class="row text-center align-items-center">

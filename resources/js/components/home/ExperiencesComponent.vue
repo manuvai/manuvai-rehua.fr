@@ -1,88 +1,105 @@
 <template>
   <div class="custom-wrapper" id="experiences">
     <div class="row">
-      <div class="col-md-12 mt-2">
-        <h2 class="display-4 ml-4">Parcours</h2>
+      <div class="col-md-10 offset-md-1 mt-2">
+        <h2 class="display-4">Parcours</h2>
         <h3 class="text-1 font-weight-bold">
-          <b-icon icon="journal-plus" width="50px" class="font-weight: bold"></b-icon
+          <b-icon
+            icon="journal-plus"
+            width="50px"
+            class="font-weight: bold"
+          ></b-icon
           >Exp&eacute;riences
         </h3>
-        <div class="container timeline-container-1">
-          <div class="main-timeline">
-            <!-- start experience section-->
-            <div class="timeline" v-for="(exp, index) in job_experiences" :key="index">
-              <div class="icon"></div>
-              <div class="date-content">
-                <div class="date-outer">
-                  <span class="date">
-                    <span class="month">{{ '' }}</span>
-                    <span class="year">{{ dateFormat(exp.date_start) }}</span>
-                  </span>
-                </div>
-              </div>
-              <div class="timeline-content">
-                <h5 class="title">{{exp.name}} - {{exp.company}}</h5>
-                <p class="description" v-html="exp.desc">
-                </p>
-              </div>
+      </div>
+    </div>
+    <div class="container timeline-container-1">
+      <div class="main-timeline">
+        <!-- start experience section-->
+        <div
+          class="timeline"
+          v-for="(exp, index) in job_experiences"
+          :key="index"
+        >
+          <div class="icon"></div>
+          <div class="date-content">
+            <div class="date-outer">
+              <span class="date">
+                <span class="month">{{ "" }}</span>
+                <span class="year">{{ dateFormat(exp.date_start) }}</span>
+              </span>
             </div>
-            <!-- end experience section-->
+          </div>
+          <div class="timeline-content">
+            <h5 class="title">{{ exp.name }} - {{ exp.company }}</h5>
+            <p class="description" v-html="exp.desc"></p>
           </div>
         </div>
+        <!-- end experience section-->
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-10 offset-md-1 mt-2">
         <h3 class="text-2 font-weight-bold">
-          <b-icon icon="journal-plus" width="50px" class="font-weight: bold"></b-icon
+          <b-icon
+            icon="journal-plus"
+            width="50px"
+            class="font-weight: bold"
+          ></b-icon
           >Stages
         </h3>
-        <div class="container timeline-container-2">
-          <div class="main-timeline">
-            <!-- start experience section-->
-            <div class="timeline" v-for="(exp, index) in internships" :key="index">
-              <div class="icon"></div>
-              <div class="date-content">
-                <div class="date-outer">
-                  <span class="date">
-                    <span class="month">{{ '' }}</span>
-                    <span class="year">{{ dateFormat(exp.date_start) }}</span>
-                  </span>
-                </div>
-              </div>
-              <div class="timeline-content">
-                <h5 class="title">{{exp.name}} - {{exp.company}}</h5>
-                <p class="description" v-html="exp.desc">
-                </p>
-              </div>
+      </div>
+    </div>
+    <div class="container timeline-container-2">
+      <div class="main-timeline">
+        <!-- start experience section-->
+        <div class="timeline" v-for="(exp, index) in internships" :key="index">
+          <div class="icon"></div>
+          <div class="date-content">
+            <div class="date-outer">
+              <span class="date">
+                <span class="month">{{ "" }}</span>
+                <span class="year">{{ dateFormat(exp.date_start) }}</span>
+              </span>
             </div>
-            <!-- end experience section-->
+          </div>
+          <div class="timeline-content">
+            <h5 class="title">{{ exp.name }} - {{ exp.company }}</h5>
+            <p class="description" v-html="exp.desc"></p>
           </div>
         </div>
-        <p class="lead"></p>
+        <!-- end experience section-->
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-10 offset-md-1 mt-2">
         <h3 class="text-3 font-weight-bold">
           <b-icon icon="award" width="50px" class="font-weight: bold"></b-icon
           >Formation
         </h3>
-        <div class="container timeline-container-3">
-          <div class="main-timeline">
-            <!-- start experience section-->
-            <div class="timeline" v-for="(exp, index) in formations" :key="index">
-              <div class="icon third-part"></div>
-              <div class="date-content">
-                <div class="date-outer">
-                  <span class="date">
-                    <span class="month">{{ '' }}</span>
-                    <span class="year">{{ dateFormat(exp.date_start) }}</span>
-                  </span>
-                </div>
-              </div>
-              <div class="timeline-content">
-                <h5 class="title">{{exp.name}} - {{exp.company}}</h5>
-                <p class="description" v-html="exp.desc">
-                </p>
-              </div>
+      </div>
+    </div>
+    <div class="container timeline-container-3">
+      <div class="main-timeline">
+        <!-- start experience section-->
+        <div class="timeline" v-for="(exp, index) in formations" :key="index">
+          <div class="icon third-part"></div>
+          <div class="date-content">
+            <div class="date-outer">
+              <span class="date">
+                <span class="month">{{ "" }}</span>
+                <span class="year">{{ dateFormat(exp.date_start) }}</span>
+              </span>
             </div>
-            <!-- end experience section-->
+          </div>
+          <div class="timeline-content">
+            <h5 class="title">{{ exp.name }} - {{ exp.company }}</h5>
+            <p class="description" v-html="exp.desc"></p>
           </div>
         </div>
-        <p class="lead"></p>
+        <!-- end experience section-->
       </div>
     </div>
   </div>
@@ -99,20 +116,20 @@ export default {
   },
   computed: {
     job_experiences() {
-      return this.experiences.filter(exp => exp.type == 'job')
+      return this.experiences.filter((exp) => exp.type == "job");
     },
     internships() {
-      return this.experiences.filter(exp => exp.type == 'internship')
+      return this.experiences.filter((exp) => exp.type == "internship");
     },
     formations() {
-      return this.experiences.filter(exp => exp.type == 'cursus')
-    }
+      return this.experiences.filter((exp) => exp.type == "cursus");
+    },
   },
   mounted() {},
 };
 </script>
 <style lang="scss" scoped>
-$color1: #5F8BE4;
+$color1: #5f8be4;
 $color2: #5849a0;
 $color3: #42a078;
 body {
@@ -177,7 +194,6 @@ body {
   border: 2px solid #232323;
   left: -3px;
 }
-
 
 .main-timeline .icon:after {
   border: 2px solid #c6c6c6;
@@ -336,14 +352,14 @@ body {
   text-align: right;
 }
 
-.text-1{
-  color: $color1
+.text-1 {
+  color: $color1;
 }
-.text-2{
-  color: $color2
+.text-2 {
+  color: $color2;
 }
-.text-3{
-  color: $color3
+.text-3 {
+  color: $color3;
 }
 
 @media only screen and (max-width: 991px) {

@@ -1,7 +1,7 @@
 <template>
     <div class="custom-wrapper" id="portfolio">
         <div class="row">
-            <div class="col-md-10 offset-md-2 mt-2">
+            <div class="col-md-10 offset-md-1 mt-2">
                 <h2 class="display-4">Portfolio</h2>
                 <p class="lead">
                     Quelques exemples des projets men&eacute;s durant mes stages et mon poste de d&eacute;veloppeur Junior

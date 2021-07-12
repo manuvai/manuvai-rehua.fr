@@ -1,7 +1,12 @@
 <template>
   <div class="custom-wrapper" id="skills">
-    <h2 class="display-4">Comp&eacute;tences</h2>
-    <h3 class="display-5">Web</h3>
+    
+    <div class="row">
+        <div class="col-md-10 offset-md-1 mt-2">
+          <h2 class="display-4">Comp&eacute;tences</h2>
+          <h3 class="display-5">Web</h3>
+        </div>
+    </div>
     <div class="row m-4 text-center justify-content-center">
       <div class="col-sm-4" v-for="skill in skills.filter(e => e.categ == 'web')" :key="skill.key">
         <div class="card">
@@ -20,7 +25,11 @@
         </div>
       </div>
     </div>
-    <h3 class="display-5">Base de donn&eacute;es</h3>
+    <div class="row">
+        <div class="col-md-10 offset-md-1 mt-2">
+          <h3 class="display-5">Base de donn&eacute;es</h3>
+        </div>
+    </div>
     <div class="row m-4 text-center justify-content-center">
       <div class="col-sm-4" v-for="skill in skills.filter(e => e.categ == 'db')" :key="skill.key">
         <div class="card">
@@ -39,7 +48,11 @@
         </div>
       </div>
     </div>
-    <h3 class="display-5">Autres</h3>
+    <div class="row">
+        <div class="col-md-10 offset-md-1 mt-2">
+          <h3 class="display-5">Autres</h3>
+        </div>
+    </div>
     <div class="row m-4 text-center justify-content-center">
       <div class="col-sm-4" v-for="skill in skills.filter(e => e.categ == 'other')" :key="skill.key">
         <div class="card">

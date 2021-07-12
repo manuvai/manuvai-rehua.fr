@@ -1,7 +1,7 @@
 <template>
     <div class="custom-wrapper" id="about">
         <div class="row">
-            <div class="col-md-10 offset-md-2 mt-2">
+            <div class="col-md-10 offset-md-1 mt-2">
                 <h2 class="display-4">&Agrave; propos</h2>
                 <p class="lead">
                     &Agrave; l'issue de ma formation en informatique &agrave; l'Universit&eacute; de la Polyn&eacute;sie fran&ccedil;aise, j'ai eu la chance d'exp&eacute;rimenter le monde du web tant d'un point de vue logique que pratique.

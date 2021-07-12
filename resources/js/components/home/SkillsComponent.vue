@@ -8,7 +8,7 @@
         </div>
     </div>
     <div class="row m-4 text-center justify-content-center">
-      <div class="col-sm-4" v-for="skill in skills.filter(e => e.categ == 'web')" :key="skill.key">
+      <div class="col-sm-2" v-for="skill in skills.filter(e => e.categ == 'web')" :key="skill.key">
         <div class="card">
           <img
             class="card-img-top"
@@ -31,7 +31,7 @@
         </div>
     </div>
     <div class="row m-4 text-center justify-content-center">
-      <div class="col-sm-4" v-for="skill in skills.filter(e => e.categ == 'db')" :key="skill.key">
+      <div class="col-sm-2" v-for="skill in skills.filter(e => e.categ == 'db')" :key="skill.key">
         <div class="card">
           <img
             class="card-img-top"
@@ -54,7 +54,7 @@
         </div>
     </div>
     <div class="row m-4 text-center justify-content-center">
-      <div class="col-sm-4" v-for="skill in skills.filter(e => e.categ == 'other')" :key="skill.key">
+      <div class="col-sm-2" v-for="skill in skills.filter(e => e.categ == 'other')" :key="skill.key">
         <div class="card">
           <img
             class="card-img-top"

@@ -10,7 +10,7 @@
         </div>
         <div class="row justify-content-center m-4">
             <div class="col-12 col-md-6 col-lg-4 mb-4" v-for="el in data" :key="el.id">
-                <div class="card text-white bg-dark"> 
+                <div class="card text-white bg-dark h-100"> 
                     <img :src="el.imagePath" class="card-img">
                     <div class="card-img-overlay opacity-cover">
                         <h5 class="card-title">{{ el.name }} </h5>

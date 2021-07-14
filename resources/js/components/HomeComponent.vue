@@ -87,6 +87,16 @@
                                 <li>Ajax</li>
                             </ul>`,
                     },
+                    {
+                        id: 6,
+                        imagePath: "/images/anime-list.gif",
+                        name: "MyAnime List",
+                        desc: `
+                            <ul>
+                                <li>Gestion base de donn&eacute;es</li>
+                                <li>Programmation orient&eacute;e objet</li>
+                            </ul>`,
+                    },
                 ],
                 experiences: [
                     {

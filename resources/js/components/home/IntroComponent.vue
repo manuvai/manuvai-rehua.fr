@@ -5,8 +5,8 @@
                 <div class="col-12 col-lg-6 col-md-6 col-sm-6">
                     <span class="align-middle">
                         <h2 class="display-4">Bonjour,<br/></h2> 
-                        <h1 class=""> Je m'appelle Manuvai REHUA</h1>
-                        <h2 class="">, développeur web</h2>
+                        <h1 class=""> Je m'appelle Manuvai REHUA, </h1>
+                        <h2 class="">développeur web</h2>
                     </span>
                     <a :href="config.links.github" target="_blank" rel="noopener noreferrer">
                         <span class="h1">

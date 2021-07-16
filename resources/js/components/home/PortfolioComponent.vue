@@ -13,7 +13,7 @@
                 <div class="card text-white bg-dark h-100"> 
                     <img :src="el.imagePath" class="card-img">
                     <div class="card-img-overlay opacity-cover">
-                        <h5 class="card-title">{{ el.name }} </h5>
+                        <h5 class="card-title" v-html="el.name"></h5>
                         <p class="card-text">
                             <span v-html="el.desc"></span>
                         </p>

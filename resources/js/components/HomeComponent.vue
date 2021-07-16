@@ -104,7 +104,13 @@
                         company: 'Vodafone Polynésie', 
                         date_start: '2020-11-02', 
                         date_end: '2020-10-31', 
-                        desc: `Correction et ajout de nouvelles fonctionnalités sur la plateforme de jeux de Vodafone.`, 
+                        desc: 
+                            `<ul>
+                                <li>Correction et ajout de nouvelles fonctionnalités sur la plateforme de jeux de Vodafone.</li>
+                                <li>Créations de divers formulaire de connexion</li>
+                                <li>Utilisation d'APIs de l'entreprise</li>
+                                <li>Utilisation des méthodes agiles / Gestion de projet</li>
+                            </ul>`, 
                         type: 'job'
                     },
                     {

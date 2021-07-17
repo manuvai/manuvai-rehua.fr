@@ -6,7 +6,8 @@
 
         <title>Manuvai REHUA</title>
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-        <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js"></script>
+        <script type="application/javascript" async=false defer=false src="https://platform.linkedin.com/badges/js/profile.js"></script>
+        <script src="{{ asset('js/app.js') }}"></script>
     </head>
     <body>
         <div id="app">
@@ -51,6 +52,5 @@
             </footer>
         </div>
 
-        <script src="{{ asset('js/app.js') }}"></script>
     </body>
 </html>

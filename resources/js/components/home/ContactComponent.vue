@@ -34,7 +34,21 @@
               </a>
             </div>
             <div class="col-sm-12">
-              <div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="fr_FR" data-type="horizontal" data-theme="light" data-vanity="manuvai-rehua"><a class="LI-simple-link" href='https://pf.linkedin.com/in/manuvai-rehua?trk=profile-badge'>Manuvai REHUA</a></div>
+              <div
+                class="LI-profile-badge"
+                data-version="v1"
+                data-size="medium"
+                data-locale="fr_FR"
+                data-type="horizontal"
+                data-theme="light"
+                data-vanity="manuvai-rehua"
+              >
+                <a
+                  class="LI-simple-link"
+                  href="https://pf.linkedin.com/in/manuvai-rehua?trk=profile-badge"
+                  >Manuvai REHUA</a
+                >
+              </div>
             </div>
           </div>
         </div>

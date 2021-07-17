@@ -9,6 +9,7 @@
     </div>
 </template>
 
+
 <script>
     import Intro from './home/IntroComponent.vue';
     import About from './home/AboutComponent.vue';
@@ -106,10 +107,10 @@
                         date_end: '2020-10-31', 
                         desc: 
                             `<ul>
-                                <li>Correction et ajout de nouvelles fonctionnalités sur la plateforme de jeux de Vodafone.</li>
+                                <li>Correction et ajout de nouvelles fonctionnalités sur la <a href="https://jeux.vodafone.pf" target="_blank">plateforme de jeux de Vodafone</a>.</li>
                                 <li>Créations de divers formulaire de connexion</li>
                                 <li>Utilisation d'APIs de l'entreprise</li>
-                                <li>Utilisation des méthodes agiles / Gestion de projet</li>
+                                <li>Utilisation des méthodes agiles / Gestion de projet (Scrum, Kanban)</li>
                             </ul>`, 
                         type: 'job'
                     },

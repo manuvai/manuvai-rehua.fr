@@ -36,12 +36,12 @@ const router = new VueRouter({
     mode: 'history'
 });
 
-const app = new Vue({
-    el: '#app',
-    router: router
-});
 
 $(function() {
+    const app = new Vue({
+        el: '#app',
+        router: router
+    });
     if($(window).scrollTop() > 50) {
         $(".header").addClass("active");
     }

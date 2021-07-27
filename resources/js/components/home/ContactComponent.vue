@@ -67,6 +67,8 @@
         </div>
       </div>
     </div>
+    <script type="application/javascript" async=false defer=false src="https://platform.linkedin.com/badges/js/profile.js"></script>
+
   </div>
 </template>
 <script>

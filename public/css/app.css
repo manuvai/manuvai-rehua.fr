@@ -1,0 +1,21 @@
+.s-100vh {
+    height: 100vh !important;
+    overflow: hidden !important;
+}
+
+.card svg {
+    width: 100%;
+    height: 100%;
+}
+.overflow-y-scroll {
+    overflow-y: scroll !important;
+}
+
+
+@media only screen and (max-width:767px) {
+    .img-hide-small {
+        display: none;
+    }
+}
+
+}

@@ -24,7 +24,7 @@ class Experience extends Model
             return $diff->m . ' mois';
         }
         setlocale(LC_TIME, 'fr_FR');
-        return date('M Y', strtotime($this->start_date));
+        return date('Y', strtotime($this->start_date));
 
     }
 
@@ -39,13 +39,13 @@ class Experience extends Model
         $diff = $d1->diff($d2);
 
         if (!$diff->y && !$diff->m) {
-            return $formattedDate1 . ' - ' . ($this->end_date ? $formattedDate2 : 'aujourd\'ui');
+            return $formattedDate1 . ' - ' . ($this->end_date ? $formattedDate2 : 'Aujourd\'ui');
         }
 
         $formattedDate1 = date('F Y', strtotime($this->start_date));
         $formattedDate2 = date('F Y', strtotime($end_date));
 
-        return $formattedDate1 . ' - ' . $formattedDate2;
+        return $formattedDate1 . ' - ' . ($this->end_date ? $formattedDate2 : 'Aujourd\'ui');
         
     }
 }

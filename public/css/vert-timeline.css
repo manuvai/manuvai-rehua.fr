@@ -1,8 +1,8 @@
 :root {
-    --bg-color-1: #5A63FF;
-    --bg-color-2: #A35AFF;
-    --bg-color-3: #FF5A63;
-    --bg-color-4: #63FF5A;
+    --timeline-bg-color-1: #5A63FF;
+    --timeline-bg-color-2: #A35AFF;
+    --timeline-bg-color-3: #FF5A63;
+    --timeline-bg-color-4: #449B2A;
 }
 
 body {
@@ -180,60 +180,60 @@ a {
 .main-timeline .timeline:nth-child(2n) .timeline-icon i,
 .main-timeline .timeline:nth-child(2n) .timeline-icon:before,
 .main-timeline .timeline:nth-child(2n):before {
-    background: var(--bg-color-2)
+    background: var(--timeline-bg-color-2)
 }
 
 .main-timeline .timeline:nth-child(2n) .timeline-icon {
-    border-color: var(--bg-color-2)
+    border-color: var(--timeline-bg-color-2)
 }
 
 .main-timeline .timeline:nth-child(2n) .title {
-    color: var(--bg-color-2)
+    color: var(--timeline-bg-color-2)
 }
 
 .main-timeline .timeline:nth-child(2n) .timeline-content:before {
-    border-left-color: var(--bg-color-2);
-    border-bottom-color: var(--bg-color-2)
+    border-left-color: var(--timeline-bg-color-2);
+    border-bottom-color: var(--timeline-bg-color-2)
 }
 
 .main-timeline .timeline:nth-child(3n) .timeline-content:after,
 .main-timeline .timeline:nth-child(3n) .timeline-icon i,
 .main-timeline .timeline:nth-child(3n) .timeline-icon:before,
 .main-timeline .timeline:nth-child(3n):before {
-    background: var(--bg-color-3)
+    background: var(--timeline-bg-color-3)
 }
 
 .main-timeline .timeline:nth-child(3n) .timeline-icon {
-    border-color: var(--bg-color-3)
+    border-color: var(--timeline-bg-color-3)
 }
 
 .main-timeline .timeline:nth-child(3n) .title {
-    color: var(--bg-color-3)
+    color: var(--timeline-bg-color-3)
 }
 
 .main-timeline .timeline:nth-child(3n) .timeline-content:before {
-    border-left-color: var(--bg-color-3);
-    border-bottom-color: var(--bg-color-3)
+    border-left-color: var(--timeline-bg-color-3);
+    border-bottom-color: var(--timeline-bg-color-3)
 }
 
 .main-timeline .timeline:nth-child(4n) .timeline-content:after,
 .main-timeline .timeline:nth-child(4n) .timeline-icon i,
 .main-timeline .timeline:nth-child(4n) .timeline-icon:before,
 .main-timeline .timeline:nth-child(4n):before {
-    background: var(--bg-color-4)
+    background: var(--timeline-bg-color-4)
 }
 
 .main-timeline .timeline:nth-child(4n) .timeline-icon {
-    border-color: var(--bg-color-4)
+    border-color: var(--timeline-bg-color-4)
 }
 
 .main-timeline .timeline:nth-child(4n) .title {
-    color: var(--bg-color-4)
+    color: var(--timeline-bg-color-4)
 }
 
 .main-timeline .timeline:nth-child(4n) .timeline-content:before {
-    border-left-color: var(--bg-color-4);
-    border-bottom-color: var(--bg-color-4)
+    border-left-color: var(--timeline-bg-color-4);
+    border-bottom-color: var(--timeline-bg-color-4)
 }
 
 @media only screen and (max-width:1200px) {
@@ -690,8 +690,8 @@ a {
     height: 210px;
     border-radius: 50%;
     border: 25px solid transparent;
-    border-top-color: var(--bg-color-1);
-    border-right-color: var(--bg-color-1);
+    border-top-color: var(--timeline-bg-color-1);
+    border-right-color: var(--timeline-bg-color-1);
     z-index: 1;
     transform: rotate(45deg)
 }
@@ -706,7 +706,7 @@ a {
     box-shadow: 0 0 20px rgba(0, 0, 0, .4);
     font-size: 30px;
     font-weight: 700;
-    color: var(--bg-color-1);
+    color: var(--timeline-bg-color-1);
     text-align: center;
     transform: rotate(-45deg)
 }
@@ -718,7 +718,7 @@ a {
 .main-timeline3 .timeline-content {
     width: 35%;
     float: right;
-    background: var(--bg-color-1);
+    background: var(--timeline-bg-color-1);
     padding: 30px 20px;
     margin: 50px 0;
     box-shadow: 0 10px 25px -10px rgba(72, 29, 99, .3);
@@ -731,7 +731,7 @@ a {
     content: "";
     width: 20%;
     height: 15px;
-    background: var(--bg-color-1);
+    background: var(--timeline-bg-color-1);
     position: absolute;
     top: 50%;
     left: -20%;
@@ -755,13 +755,13 @@ a {
 
 .main-timeline3 .timeline:nth-child(2n) .timeline-icon {
     transform: rotate(-135deg);
-    border-top-color: var(--bg-color-2);
-    border-right-color: var(--bg-color-2)
+    border-top-color: var(--timeline-bg-color-2);
+    border-right-color: var(--timeline-bg-color-2)
 }
 
 .main-timeline3 .timeline:nth-child(2n) .year {
     transform: rotate(135deg);
-    color: var(--bg-color-2)
+    color: var(--timeline-bg-color-2)
 }
 
 .main-timeline3 .timeline:nth-child(2n) .timeline-content {
@@ -775,35 +775,35 @@ a {
 
 .main-timeline3 .timeline:nth-child(2n) .timeline-content,
 .main-timeline3 .timeline:nth-child(2n) .timeline-content:before {
-    background: var(--bg-color-2)
+    background: var(--timeline-bg-color-2)
 }
 
 .main-timeline3 .timeline:nth-child(3n) .timeline-icon {
-    border-top-color: var(--bg-color-3);
-    border-right-color: var(--bg-color-3)
+    border-top-color: var(--timeline-bg-color-3);
+    border-right-color: var(--timeline-bg-color-3)
 }
 
 .main-timeline3 .timeline:nth-child(3n) .year {
-    color: var(--bg-color-3)
+    color: var(--timeline-bg-color-3)
 }
 
 .main-timeline3 .timeline:nth-child(3n) .timeline-content,
 .main-timeline3 .timeline:nth-child(3n) .timeline-content:before {
-    background: var(--bg-color-3)
+    background: var(--timeline-bg-color-3)
 }
 
 .main-timeline3 .timeline:nth-child(4n) .timeline-icon {
-    border-top-color: var(--bg-color-4);
-    border-right-color: var(--bg-color-4)
+    border-top-color: var(--timeline-bg-color-4);
+    border-right-color: var(--timeline-bg-color-4)
 }
 
 .main-timeline3 .timeline:nth-child(4n) .year {
-    color: var(--bg-color-4)
+    color: var(--timeline-bg-color-4)
 }
 
 .main-timeline3 .timeline:nth-child(4n) .timeline-content,
 .main-timeline3 .timeline:nth-child(4n) .timeline-content:before {
-    background: var(--bg-color-4)
+    background: var(--timeline-bg-color-4)
 }
 
 @media only screen and (max-width:1199px) {

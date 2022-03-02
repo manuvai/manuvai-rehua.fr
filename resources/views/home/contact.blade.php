@@ -15,8 +15,8 @@
 
             </div>
         </div>
-        <div class="col-md-9">
-            <form action="{{route('contact.index')}}" @submit="submitContactForm" method="post" data-app="contact">
+        <div class="col-md-9" data-app="contact">
+            <form action="{{route('contact.index')}}" @submit="submitContactForm" method="post" v-if="!form_states.message_sent">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="form-group row m-4">
                     <label for="name" class="col-sm-2 col-form-label">Nom * :</label>
@@ -57,9 +57,13 @@
                       </small>      
                     </div>
                 </div>
-                <button class="btn btn-primary " type="submit">Submit form</button>
+                <button class="btn btn-secondary " type="button" v-if="form_states.message_sending">Veuillez patienter...</button>
+                <button class="btn btn-primary " type="submit" v-else>Envoyer</button>
 
             </form>
+            <div class="alert alert-success" v-else role="alert">
+                Merci pour la petite note ! Votre message a bien été envoyé !
+            </div>
         </div>
     </div>
 </div>

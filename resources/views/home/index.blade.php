@@ -9,4 +9,5 @@
     @include('home.experiences')
     @include('home.hobbies')
     @include('home.contact')
+    @include('components.float-cv-dl')
 @endsection

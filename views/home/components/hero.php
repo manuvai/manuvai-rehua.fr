@@ -9,8 +9,8 @@
             J'ai travaill&eacute; pendant 2 ans dans le web et je m'int&eacute;resse au d&eacute;veloppement de logiciels. <br>
         </p>
         <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-            <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">T&eacute;l&eacute;charger le CV</button>
-            <button type="button" class="btn btn-outline-secondary btn-lg px-4">Envoyer un message</button>
+            <a class="btn btn-primary btn-lg px-4 me-md-2" download="" target="_blank" href="/public/CV_ManuvaiREHUA.pdf">T&eacute;l&eacute;charger le CV</a>
+            <a class="btn btn-outline-secondary btn-lg px-4" href="#contact">Envoyer un message</a>
         </div>
     </div>
 </div>

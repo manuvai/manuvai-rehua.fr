@@ -7,7 +7,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link"href="#">Introduction</a>
+                    <a class="nav-link"href="{{route('settings')}}">Param&egrave;tres</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Comp&eacute;tences</a>
@@ -17,9 +17,6 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Exp&eacute;riences</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
                 </li>
             </ul>
         </div>

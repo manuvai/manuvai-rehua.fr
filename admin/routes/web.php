@@ -28,3 +28,6 @@ Route::get('/skills', [SkillController::class, 'index'])->name('skills.list');
 Route::get('/skills/create', [SkillController::class, 'create'])->name('skills.create');
 Route::post('/skills/store', [SkillController::class, 'store'])->name('skills.store');
 Route::post('/skills/destroy/{skill}', [SkillController::class, 'destroy'])->name('skills.destroy');
+
+Route::get('/skills/edit/{skill}', [SkillController::class, 'edit'])->name('skills.edit');
+Route::post('/skills/update/{skill}', [SkillController::class, 'update'])->name('skills.update');

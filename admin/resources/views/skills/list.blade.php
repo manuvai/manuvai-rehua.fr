@@ -15,6 +15,7 @@
                 @csrf
                 <button type="submit" class="btn btn-danger">Supprimer</button>
             </form>
+            <a href="{{route('skills.edit', $skill->id)}}" class="btn btn-primary">Modifier</a>
             Créé le {{$skill->created_at->format('d/m/Y')}}
         </div>
     </div>

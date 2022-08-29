@@ -60,7 +60,7 @@ class SkillController extends Controller
      */
     public function edit(Skill $skill)
     {
-        //
+        return view('skills.edit', ['skill' => $skill]);
     }
 
     /**
@@ -72,7 +72,16 @@ class SkillController extends Controller
      */
     public function update(Request $request, Skill $skill)
     {
-        //
+        if ($request->file('image')) {
+            $filePath = self::storeFile($request, 'image');
+            $skill
+                ->update(['image_path' => $filePath ?: '']);
+        }
+
+        $skill->title = $request->title;
+        $skill->rate = $request->rate;
+
+        return redirect(route('skills.list'));
     }
 
     /**

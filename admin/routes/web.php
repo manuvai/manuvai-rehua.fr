@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SkillController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,3 +23,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/settings', [App\Http\Controllers\SettingController::class, 'index'])->name('settings');
 Route::post('/settings', [App\Http\Controllers\SettingController::class, 'update'])->name('settings.edit');
+
+Route::get('/skills', [SkillController::class, 'index'])->name('skills.list');
+Route::get('/skills/create', [SkillController::class, 'create'])->name('skills.create');
+Route::post('/skills/store', [SkillController::class, 'store'])->name('skills.store');

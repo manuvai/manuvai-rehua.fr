@@ -10,7 +10,7 @@
                     <a class="nav-link"href="{{route('settings')}}">Param&egrave;tres</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Comp&eacute;tences</a>
+                    <a class="nav-link" href="{{route('skills.list')}}">Comp&eacute;tences</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Projets</a>

@@ -27,3 +27,4 @@ Route::post('/settings', [App\Http\Controllers\SettingController::class, 'update
 Route::get('/skills', [SkillController::class, 'index'])->name('skills.list');
 Route::get('/skills/create', [SkillController::class, 'create'])->name('skills.create');
 Route::post('/skills/store', [SkillController::class, 'store'])->name('skills.store');
+Route::post('/skills/destroy/{skill}', [SkillController::class, 'destroy'])->name('skills.destroy');

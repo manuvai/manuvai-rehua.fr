@@ -3,6 +3,7 @@
 use App\Http\Controllers\CursusController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\SkillController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,30 +23,34 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/settings', [App\Http\Controllers\SettingController::class, 'index'])->name('settings');
-Route::post('/settings', [App\Http\Controllers\SettingController::class, 'update'])->name('settings.edit');
+Route::middleware(['auth'])->group(function() {
+    
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('/settings', [App\Http\Controllers\SettingController::class, 'index'])->name('settings');
+    Route::post('/settings', [App\Http\Controllers\SettingController::class, 'update'])->name('settings.edit');
 
-Route::get('/skills', [SkillController::class, 'index'])->name('skills.list');
-Route::get('/skills/create', [SkillController::class, 'create'])->name('skills.create');
-Route::post('/skills/store', [SkillController::class, 'store'])->name('skills.store');
-Route::post('/skills/destroy/{skill}', [SkillController::class, 'destroy'])->name('skills.destroy');
+    Route::get('/skills', [SkillController::class, 'index'])->name('skills.list');
+    Route::get('/skills/create', [SkillController::class, 'create'])->name('skills.create');
+    Route::post('/skills/store', [SkillController::class, 'store'])->name('skills.store');
+    Route::post('/skills/destroy/{skill}', [SkillController::class, 'destroy'])->name('skills.destroy');
 
-Route::get('/skills/edit/{skill}', [SkillController::class, 'edit'])->name('skills.edit');
-Route::post('/skills/update/{skill}', [SkillController::class, 'update'])->name('skills.update');
+    Route::get('/skills/edit/{skill}', [SkillController::class, 'edit'])->name('skills.edit');
+    Route::post('/skills/update/{skill}', [SkillController::class, 'update'])->name('skills.update');
 
-Route::get('/projects', [ProjectController::class, 'index'])->name('projects.list');
-Route::get('/projects/create', [ProjectController::class, 'create'])->name('projects.create');
-Route::post('/projects/store', [ProjectController::class, 'store'])->name('projects.store');
-Route::post('/projects/destroy/{project}', [ProjectController::class, 'destroy'])->name('projects.destroy');
+    Route::get('/projects', [ProjectController::class, 'index'])->name('projects.list');
+    Route::get('/projects/create', [ProjectController::class, 'create'])->name('projects.create');
+    Route::post('/projects/store', [ProjectController::class, 'store'])->name('projects.store');
+    Route::post('/projects/destroy/{project}', [ProjectController::class, 'destroy'])->name('projects.destroy');
 
-Route::get('/projects/edit/{project}', [ProjectController::class, 'edit'])->name('projects.edit');
-Route::post('/projects/update/{project}', [ProjectController::class, 'update'])->name('projects.update');
+    Route::get('/projects/edit/{project}', [ProjectController::class, 'edit'])->name('projects.edit');
+    Route::post('/projects/update/{project}', [ProjectController::class, 'update'])->name('projects.update');
 
-Route::get('/cursuses', [CursusController::class, 'index'])->name('cursuses.list');
-Route::get('/cursuses/create', [CursusController::class, 'create'])->name('cursuses.create');
-Route::post('/cursuses/store', [CursusController::class, 'store'])->name('cursuses.store');
-Route::post('/cursuses/destroy/{cursus}', [CursusController::class, 'destroy'])->name('cursuses.destroy');
+    Route::get('/cursuses', [CursusController::class, 'index'])->name('cursuses.list');
+    Route::get('/cursuses/create', [CursusController::class, 'create'])->name('cursuses.create');
+    Route::post('/cursuses/store', [CursusController::class, 'store'])->name('cursuses.store');
+    Route::post('/cursuses/destroy/{cursus}', [CursusController::class, 'destroy'])->name('cursuses.destroy');
 
-Route::get('/cursuses/edit/{cursus}', [CursusController::class, 'edit'])->name('cursuses.edit');
-Route::post('/cursuses/update/{cursus}', [CursusController::class, 'update'])->name('cursuses.update');
+    Route::get('/cursuses/edit/{cursus}', [CursusController::class, 'edit'])->name('cursuses.edit');
+    Route::post('/cursuses/update/{cursus}', [CursusController::class, 'update'])->name('cursuses.update');
+
+});

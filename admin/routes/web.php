@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\SkillController;
 use Illuminate\Support\Facades\Route;
 
@@ -31,3 +32,11 @@ Route::post('/skills/destroy/{skill}', [SkillController::class, 'destroy'])->nam
 
 Route::get('/skills/edit/{skill}', [SkillController::class, 'edit'])->name('skills.edit');
 Route::post('/skills/update/{skill}', [SkillController::class, 'update'])->name('skills.update');
+
+Route::get('/projects', [ProjectController::class, 'index'])->name('projects.list');
+Route::get('/projects/create', [ProjectController::class, 'create'])->name('projects.create');
+Route::post('/projects/store', [ProjectController::class, 'store'])->name('projects.store');
+Route::post('/projects/destroy/{project}', [ProjectController::class, 'destroy'])->name('projects.destroy');
+
+Route::get('/projects/edit/{project}', [ProjectController::class, 'edit'])->name('projects.edit');
+Route::post('/projects/update/{project}', [ProjectController::class, 'update'])->name('projects.update');

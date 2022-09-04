@@ -13,7 +13,7 @@
                     <a class="nav-link" href="{{route('skills.list')}}">Comp&eacute;tences</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Projets</a>
+                    <a class="nav-link" href="{{route('projects.list')}}">Projets</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Exp&eacute;riences</a>

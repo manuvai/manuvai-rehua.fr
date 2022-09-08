@@ -3,6 +3,9 @@
 use App\Http\Controllers\CursusController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\SkillController;
+use App\Http\Resources\SettingCollection;
+use App\Http\Resources\SettingsResource;
+use App\Models\Setting;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -53,4 +56,13 @@ Route::middleware(['auth'])->group(function() {
     Route::get('/cursuses/edit/{cursus}', [CursusController::class, 'edit'])->name('cursuses.edit');
     Route::post('/cursuses/update/{cursus}', [CursusController::class, 'update'])->name('cursuses.update');
 
+});
+
+Route::prefix('api')->group(function() {
+    Route::get('/settings', function() {
+        return json_encode(Setting::initData());
+    });
+    Route::get('/settings', function() {
+        return json_encode(Setting::initData());
+    });
 });

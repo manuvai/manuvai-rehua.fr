@@ -13,7 +13,7 @@ class Setting extends Model
 
     protected static $data = array();
 
-    private static function initData() {
+    public static function initData() {
         $data = array();
         foreach (self::all() as $row) {
             $data[$row['key']] = $row['value'];

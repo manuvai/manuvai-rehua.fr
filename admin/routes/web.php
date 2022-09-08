@@ -5,7 +5,10 @@ use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\SkillController;
 use App\Http\Resources\SettingCollection;
 use App\Http\Resources\SettingsResource;
+use App\Http\Resources\SkillCollection;
+use App\Http\Resources\SkillResource;
 use App\Models\Setting;
+use App\Models\Skill;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -62,7 +65,10 @@ Route::prefix('api')->group(function() {
     Route::get('/settings', function() {
         return json_encode(Setting::initData());
     });
-    Route::get('/settings', function() {
-        return json_encode(Setting::initData());
+    Route::get('/skills', function() {
+        return new SkillCollection(Skill::all());
+    });
+    Route::get('/skills/{id}', function($id) {
+        return new SkillResource(Skill::findOrFail($id));
     });
 });

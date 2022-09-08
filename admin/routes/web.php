@@ -3,12 +3,15 @@
 use App\Http\Controllers\CursusController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\SkillController;
+use App\Http\Resources\CursusCollection;
+use App\Http\Resources\CursusResource;
 use App\Http\Resources\ProjectCollection;
 use App\Http\Resources\ProjectResource;
 use App\Http\Resources\SettingCollection;
 use App\Http\Resources\SettingsResource;
 use App\Http\Resources\SkillCollection;
 use App\Http\Resources\SkillResource;
+use App\Models\Cursus;
 use App\Models\Project;
 use App\Models\Setting;
 use App\Models\Skill;
@@ -79,5 +82,11 @@ Route::prefix('api')->group(function() {
     });
     Route::get('/projects/{id}', function($id) {
         return new ProjectResource(Project::findOrFail($id));
+    });
+    Route::get('/cursuses', function() {
+        return new CursusCollection(Cursus::all());
+    });
+    Route::get('/cursuses/{id}', function($id) {
+        return new CursusResource(Cursus::findOrFail($id));
     });
 });

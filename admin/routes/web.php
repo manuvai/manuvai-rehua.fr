@@ -3,10 +3,13 @@
 use App\Http\Controllers\CursusController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\SkillController;
+use App\Http\Resources\ProjectCollection;
+use App\Http\Resources\ProjectResource;
 use App\Http\Resources\SettingCollection;
 use App\Http\Resources\SettingsResource;
 use App\Http\Resources\SkillCollection;
 use App\Http\Resources\SkillResource;
+use App\Models\Project;
 use App\Models\Setting;
 use App\Models\Skill;
 use Illuminate\Support\Facades\Auth;
@@ -70,5 +73,11 @@ Route::prefix('api')->group(function() {
     });
     Route::get('/skills/{id}', function($id) {
         return new SkillResource(Skill::findOrFail($id));
+    });
+    Route::get('/projects', function() {
+        return new ProjectCollection(Project::all());
+    });
+    Route::get('/projects/{id}', function($id) {
+        return new ProjectResource(Project::findOrFail($id));
     });
 });

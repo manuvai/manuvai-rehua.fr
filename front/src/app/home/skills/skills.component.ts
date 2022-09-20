@@ -20,7 +20,6 @@ export class SkillsComponent implements OnInit {
       .getSkills()
       .subscribe((response: any) => {
         this.skills = response.data;
-        console.log(this.skills)
       });
   }
 

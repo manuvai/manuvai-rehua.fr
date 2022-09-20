@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from 'src/app/http.service';
 
 @Component({
   selector: 'app-projects-overview',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectsOverviewComponent implements OnInit {
 
-  constructor() { }
+  projects = [{
+    title: '',
+    img_path: '',
+    description: '',
+    technologies: '',
+  }]
+  constructor(private httpService: HttpService) { }
 
   ngOnInit(): void {
+    this.httpService
+      .getProjects()
+      .subscribe((response: any) => {
+        this.projects = response.data;
+      });
   }
 
 }

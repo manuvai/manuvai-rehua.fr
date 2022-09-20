@@ -15,7 +15,7 @@
     @csrf
     <div class="form-group mb-4">
         <label for="introduction_text">Texte d'introduction</label>
-        <textarea class="form-control" name="introduction_text" id="introduction_text" aria-describedby="introduction_textHelp" rows="3">{{App\Models\Setting::get('introduction_text')}}</textarea>
+        <textarea class="form-control summernote" name="introduction_text" id="introduction_text" aria-describedby="introduction_textHelp" rows="3">{{App\Models\Setting::get('introduction_text')}}</textarea>
     </div>
     <div class="form-group mb-4">
         <label for="hero_image_path">Image h&eacute;ro</label>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from 'src/app/http.service';
 
 @Component({
   selector: 'app-contact',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
-  constructor() { }
+  linkedin_badge = '';
+
+  constructor(private httpService: HttpService) { }
 
   ngOnInit(): void {
+    this.httpService
+      .getParameters()
+      .subscribe((response: any) => {
+        this.linkedin_badge = response.linkedin_badge
+      })
   }
 
 }

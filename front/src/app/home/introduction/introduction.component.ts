@@ -28,7 +28,7 @@ export class IntroductionComponent implements OnInit {
         this.settings.introduction_text = "<h1 class=\"display-5 fw-bold lh-1 mb-3\">Bonjour, Je suis Manuvai REHUA</h1>" + this.settings.introduction_text
         this.settings.introduction_text+= `
         <div class="mt-4 d-grid gap-2 d-md-flex justify-content-md-start">
-          <a class="btn btn-primary btn-lg px-4 me-md-2" download="" target="_blank" href="{{'http://localhost:8000/storage/' + settings.cv_file_path}}">T&eacute;l&eacute;charger le CV</a>
+          <a class="btn btn-primary btn-lg px-4 me-md-2" download="" target="_blank" href="{{'https://admin.manuvai-rehua.fr/storage/' + settings.cv_file_path}}">T&eacute;l&eacute;charger le CV</a>
           <a class="btn btn-outline-secondary btn-lg px-4" href="#contact">Envoyer un message</a>
         </div>
         `

@@ -2,7 +2,7 @@
 <h2>Mes comp&eacute;tences</h2>
 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
         <div *ngFor="let skill of skills;let i = index" class="col d-flex align-items-start">
-            <img class="card-img-top" src="{{'http://localhost:8000/storage/' + skill.image_path}}" style="width:65px !important;" alt="-icon" />
+            <img class="card-img-top" src="{{'https://admin.manuvai-rehua.fr/storage/' + skill.image_path}}" style="width:65px !important;" alt="-icon" />
             <div>
                 <h4 class="fw-bold mb-0">{{skill.title}}</h4>
                 <p class="d-none">{{skill.rate}}</p>

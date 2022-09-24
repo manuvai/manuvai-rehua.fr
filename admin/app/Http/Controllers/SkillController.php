@@ -80,6 +80,7 @@ class SkillController extends Controller
 
         $skill->title = $request->title;
         $skill->rate = $request->rate;
+        $skill->update();
 
         return redirect(route('skills.list'));
     }

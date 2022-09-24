@@ -11,18 +11,18 @@ export class HttpService {
 
   getParameters() {
     
-    return this.httpClient.get('http://localhost:8000/api/settings');
+    return this.httpClient.get('https://admin.manuvai-rehua.fr/api/settings');
 
   
   }
 
   getSkills() {
-    return this.httpClient.get('http://localhost:8000/api/skills');
+    return this.httpClient.get('https://admin.manuvai-rehua.fr/api/skills');
   }
   getProjects() {
-    return this.httpClient.get('http://localhost:8000/api/projects');
+    return this.httpClient.get('https://admin.manuvai-rehua.fr/api/projects');
   }
   getCursuses() {
-    return this.httpClient.get('http://localhost:8000/api/cursuses');
+    return this.httpClient.get('https://admin.manuvai-rehua.fr/api/cursuses');
   }
 }

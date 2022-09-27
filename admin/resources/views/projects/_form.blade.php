@@ -8,8 +8,8 @@
     <div class="form-group mb-4">
         <label for="image">Image de la comp&eacute;tence</label>
         <input type="file" class="form-control" name="image" id="hero_image_path" />
-        @if ($project->image_path)
-            <img src="{{asset('storage/' . $project->image_path)}}" class="img-thumbnail" alt="" srcset="">
+        @if ($project->img_path)
+            <img src="{{asset('storage/' . $project->img_path)}}" class="img-thumbnail" alt="" srcset="">
         @endif
     </div>
     <div class="form-group mb-4">

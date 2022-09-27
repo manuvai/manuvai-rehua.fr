@@ -109,10 +109,10 @@ class ProjectController extends Controller
      */
     public function update(Request $request, Project $project)
     {
-        if ($request->file('img_path')) {
-            $filePath = self::storeFile($request, 'img_path');
+        if ($request->file('image')) {
+            $filePath = self::storeFile($request, 'image');
             $project
-                ->update(['image_path' => $filePath ?: '']);
+                ->update(['img_path' => $filePath ?: '']);
         }
         $project->title = $request->title;
         $project->description = self::getDescriptionForm($request, 'description');

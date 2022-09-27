@@ -16,6 +16,8 @@ export class IntroductionComponent implements OnInit {
     introduction_text: "",
     linkedin_badge: "",
     mobile: "",
+    linkedin_link: "",
+    github_link: "",
   };
 
   constructor(private httpService: HttpService) { }

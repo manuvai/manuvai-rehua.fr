@@ -49,6 +49,14 @@
         <label for="captcha_prv_key">Cl&eacute; priv&eacute;e ReCaptcha</label>
         <input type="password" value="{{App\Models\Setting::get('captcha_prv_key')}}" class="form-control" name="captcha_prv_key" id="captcha_prv_key" placeholder="Cl&eacute; priv&eacute;e ReCaptcha">
     </div>
+    <div class="form-group mb-4">
+        <label for="linkedin_link">Lien vers profile linkedin</label>
+        <input type="text" value="{{App\Models\Setting::get('linkedin_link')}}" class="form-control" name="linkedin_link" id="linkedin_link" placeholder="Lien vers profile linkedin">
+    </div>
+    <div class="form-group mb-4">
+        <label for="github_link">Lien vers profile github</label>
+        <input type="text" value="{{App\Models\Setting::get('github_link')}}" class="form-control" name="github_link" id="github_link" placeholder="Lien vers profile github">
+    </div>
     <button type="submit" class="btn btn-primary">Enregistrer</button>
 </form>
 @endsection

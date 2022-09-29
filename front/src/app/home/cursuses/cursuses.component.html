@@ -5,7 +5,7 @@
             <h2 class="accordion-header" id="{{'heading' + i}}">
                 <button class="{{'accordion-button ' + (i != 0 ? 'collapsed' : '')}}" type="button" [attr.data-bs-toggle]="'collapse'" [attr.data-bs-target]="'#collapse' + i" [attr.aria-expanded]="(i == 0) ? 'true' : 'false'" [attr.aria-controls]="'collapse' + i">
                     <span class="{{'bi bi-' + getIcon(experience.type)}}"></span>
-                    &nbsp;-&nbsp;{{experience.name}}
+                    &nbsp;{{getDateLabel(experience)}}&nbsp;-&nbsp;{{experience.name}}
                 </button>
             </h2>
             <div id="{{'collapse' + i}}" class="{{'accordion-collapse collapse ' + (i == 0 ? 'show' : '')}}" [attr.data-bs-parent]="'#accordionExample'">

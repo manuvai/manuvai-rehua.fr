@@ -10,6 +10,8 @@ import { HttpService } from 'src/app/http.service';
 export class ContactComponent implements OnInit {
 
   linkedin_badge = '';
+  telephone = '';
+  contact_email = '';
   name = ''
   email = ''
   message = ''
@@ -32,6 +34,8 @@ export class ContactComponent implements OnInit {
       .getParameters()
       .subscribe((response: any) => {
         this.linkedin_badge = response.linkedin_badge
+        this.telephone = response.mobile
+        this.contact_email = response.email
       })
   }
 

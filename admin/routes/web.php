@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CursusController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\SkillController;
@@ -15,7 +16,11 @@ use App\Models\Cursus;
 use App\Models\Project;
 use App\Models\Setting;
 use App\Models\Skill;
+use App\Models\User;
+use App\Notifications\ContactMessage;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -89,4 +94,5 @@ Route::prefix('api')->group(function() {
     Route::get('/cursuses/{id}', function($id) {
         return new CursusResource(Cursus::findOrFail($id));
     });
+    Route::post('/contact', [ContactController::class, 'mail']);
 });

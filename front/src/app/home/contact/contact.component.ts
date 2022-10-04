@@ -13,6 +13,7 @@ export class ContactComponent implements OnInit {
   name = ''
   email = ''
   message = ''
+  messageSent = false
 
   constructor(private httpService: HttpService) { }
 
@@ -23,7 +24,7 @@ export class ContactComponent implements OnInit {
 
     this.httpService
       .sendContact(email, name, message)
-      .subscribe(data => { })
+      .subscribe(data => { this.messageSent = !this.messageSent })
   }
 
   ngOnInit(): void {

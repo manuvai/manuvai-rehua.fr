@@ -13,6 +13,7 @@ import { SkillsComponent } from './home/skills/skills.component';
 import { ProjectsOverviewComponent } from './home/projects-overview/projects-overview.component';
 import { CursusesComponent } from './home/cursuses/cursuses.component';
 import { ContactComponent } from './home/contact/contact.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { ContactComponent } from './home/contact/contact.component';
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     AppRoutingModule,
     RouterModule.forRoot([
       {path: '', component: HomeComponent},

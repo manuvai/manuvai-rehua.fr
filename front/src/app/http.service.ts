@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -24,5 +24,12 @@ export class HttpService {
   }
   getCursuses() {
     return this.httpClient.get('https://admin.manuvai-rehua.fr/api/cursuses');
+  }
+  sendContact(useremail: string, username: string, message: string) {
+    let body = new HttpParams()
+      .set('email', useremail)
+      .set('name', username)
+      .set('message', message);
+    return this.httpClient.post('https://admin.manuvai-rehua.fr/api/contact', body)
   }
 }

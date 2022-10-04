@@ -6,25 +6,44 @@ const API_URL = 'https://admin.manuvai-rehua.fr/api'
   providedIn: 'root'
 })
 export class HttpService {
-
+  settings: any = null
+  skills: any = null  
+  projects: any = null
+  cursuses: any = null  
 
   constructor(private httpClient: HttpClient) { }
 
   getParameters() {
     
-    return this.httpClient.get(`${API_URL}/settings`);
+    if (!this.settings) {
+      this.settings = this.httpClient.get(`${API_URL}/settings`);
+      
+    }
+    return this.settings;
 
   
   }
 
   getSkills() {
-    return this.httpClient.get(`${API_URL}/skills`);
+    if (!this.skills) {
+      this.skills = this.httpClient.get(`${API_URL}/skills`);
+      
+    }
+    return this.skills;
   }
   getProjects() {
-    return this.httpClient.get(`${API_URL}/projects`);
+    if (!this.projects) {
+      this.projects = this.httpClient.get(`${API_URL}/projects`);
+      
+    }
+    return this.projects;
   }
   getCursuses() {
-    return this.httpClient.get(`${API_URL}/cursuses`);
+    if (!this.cursuses) {
+      this.cursuses = this.httpClient.get(`${API_URL}/cursuses`);
+      
+    }
+    return this.cursuses;
   }
   sendContact(useremail: string, username: string, message: string) {
     let body = new HttpParams()

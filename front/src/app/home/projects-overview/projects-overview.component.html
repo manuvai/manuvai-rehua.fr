@@ -1,19 +1,19 @@
-
 <h2>Mes projets</h2>
 <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
-    
-        <div *ngFor="let project of projects;let i = index" (click)="computeModal(project)" class="col" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" 
-                style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{'https://admin.manuvai-rehua.fr/storage/' + project.img_path}}');background-position: center top;-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
-                <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-                    <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">{{project.title}}</h3>
-                    <ul class="d-flex list-unstyled mt-auto">
-                        
-                    </ul>
-                </div>
-            </div>
-        </div>
-        
+
+  <div *ngFor="let project of projects;let i = index" (click)="computeModal(project)" class="col" data-bs-toggle="modal"
+    data-bs-target="#exampleModal">
+    <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
+      style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{'https://admin.manuvai-rehua.fr/storage/' + project.img_path}}');background-position: center top;-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+      <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+        <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">{{project.title}}</h3>
+        <ul class="d-flex list-unstyled mt-auto">
+
+        </ul>
+      </div>
+    </div>
+  </div>
+
 </div>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

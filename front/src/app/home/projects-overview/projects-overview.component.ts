@@ -13,8 +13,22 @@ export class ProjectsOverviewComponent implements OnInit {
     img_path: '',
     description: '',
     technologies: '',
-  }]
+  }];
+
+  modalData = {
+    description: '',
+    technologies: '',
+    img_path: '',
+    title: '',
+  }
   constructor(private httpService: HttpService) { }
+
+  computeModal(project: any) {
+    this.modalData.title = project.title;
+    this.modalData.img_path = `https://admin.manuvai-rehua.fr/storage/${project.img_path}`;
+    this.modalData.description = project.description;
+    this.modalData.technologies = project.technologies;
+  }
 
   ngOnInit(): void {
     this.httpService

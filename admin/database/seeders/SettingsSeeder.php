@@ -46,5 +46,13 @@ class SettingsSeeder extends Seeder
             'key' => 'captcha_prv_key',
             'value' => '',
         ]);
+        DB::table('settings')->insert([
+            'key' => 'linkedin_access_token',
+            'value' => '',
+        ]);
+        DB::table('settings')->insert([
+            'key' => 'linkedin_access_token',
+            'value' => '',
+        ]);
     }
 }

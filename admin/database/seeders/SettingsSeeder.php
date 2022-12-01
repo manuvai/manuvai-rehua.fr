@@ -51,7 +51,7 @@ class SettingsSeeder extends Seeder
             'value' => '',
         ]);
         DB::table('settings')->insert([
-            'key' => 'linkedin_access_token',
+            'key' => 'linkedin_profile_id',
             'value' => '',
         ]);
         DB::table('settings')->insert([

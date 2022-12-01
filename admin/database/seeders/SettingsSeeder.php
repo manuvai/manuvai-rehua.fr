@@ -54,5 +54,9 @@ class SettingsSeeder extends Seeder
             'key' => 'linkedin_access_token',
             'value' => '',
         ]);
+        DB::table('settings')->insert([
+            'key' => 'linkedin_publish_interval_days',
+            'value' => '',
+        ]);
     }
 }

@@ -23,14 +23,17 @@ class LinkedinPublisher
     }
 
     public function getAssetsURL() {
-        return $this->getApiURL('assets');
+        return $this->getApiURL('assets', ['action' => 'registerUpload']);
     }
 
-    public function getApiURL(string $key) {
-        return "https://api.linkedin.com/v2/{$key}?action=registerUpload&oauth2_access_token=" . $this->accessToken;
+    public function getApiURL(string $key, array $queryArray = []) {
+
+        $queryArray['oauth2_access_token'] = $this->accessToken;
+
+        return "https://api.linkedin.com/v2/$key?" . http_build_query($queryArray);
     }
 
-    public function linkedInTextPost($message, $visibility = "PUBLIC")
+    public function postText($message, $visibility = "PUBLIC")
     {
         $post_url = $this->getPostURL();
         $request = [
@@ -53,7 +56,7 @@ class LinkedinPublisher
         return $post;
     }
 
-    public function linkedInLinkPost($message, $link_title, $link_desc, $link_url, $visibility = "PUBLIC")
+    public function postLink($message, $link_title, $link_desc, $link_url, $visibility = "PUBLIC")
     {
         $post_url = $this->getPostURL();
         $request = [
@@ -88,7 +91,7 @@ class LinkedinPublisher
         return $post;
     }
 
-    public function linkedInPhotoPost($message, $image_path, $image_title, $image_description, $visibility = "PUBLIC")
+    public function postPhoto($message, $image_path, $image_title, $image_description, $visibility = "PUBLIC")
     {
 
         $prepareUrl = $this->getAssetsURL();
@@ -148,7 +151,7 @@ class LinkedinPublisher
         return $post;
     }
     
-    public function linkedInMultiplePhotosPost($message, array $images, $visibility = "PUBLIC")
+    public function postMultiplePhotos($message, array $images, $visibility = "PUBLIC")
     {
         // Posting
         $post_url = $this->getPostURL();
@@ -184,7 +187,7 @@ class LinkedinPublisher
             $media[$key]["title"]["text"] = $uploadedImageInfos["title"]["text"];
     
         }
-        
+
         $request['specificContent']['com.linkedin.ugc.ShareContent']["media"] = array_values($media);
         $post = $this->curl($post_url, json_encode($request), "application/json");
         return $post;

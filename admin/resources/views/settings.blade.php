@@ -54,6 +54,18 @@
         <input type="text" value="{{App\Models\Setting::get('linkedin_link')}}" class="form-control" name="linkedin_link" id="linkedin_link" placeholder="Lien vers profile linkedin">
     </div>
     <div class="form-group mb-4">
+        <label for="linkedin_access_token">Access token linkedin</label>
+        <input type="text" value="{{App\Models\Setting::get('linkedin_access_token')}}" class="form-control" name="linkedin_access_token" id="linkedin_access_token" placeholder="Access token linkedin">
+    </div>
+    <div class="form-group mb-4">
+        <label for="linkedin_profile_id">ID Profil linkedin</label>
+        <input type="text" value="{{App\Models\Setting::get('linkedin_profile_id')}}" class="form-control" name="linkedin_profile_id" id="linkedin_profile_id" placeholder="ID Profil linkedin">
+    </div>
+    <div class="form-group mb-4">
+        <label for="linkedin_publish_interval_days">Intervalle de publications (en jours)</label>
+        <input type="number" value="{{App\Models\Setting::get('linkedin_publish_interval_days')}}" class="form-control" name="linkedin_publish_interval_days" id="linkedin_publish_interval_days" placeholder="Intervalle de publications (en jours)">
+    </div>
+    <div class="form-group mb-4">
         <label for="github_link">Lien vers profile github</label>
         <input type="text" value="{{App\Models\Setting::get('github_link')}}" class="form-control" name="github_link" id="github_link" placeholder="Lien vers profile github">
     </div>

@@ -21,7 +21,7 @@
         <label for="hero_image_path">Image h&eacute;ro</label>
         <input type="file" class="form-control" name="hero_image_path" id="hero_image_path" />
         @if (App\Models\Setting::get('hero_image_path'))
-            <img src="{{asset('storage/' . App\Models\Setting::get('hero_image_path'))}}" class="img-thumbnail" alt="" srcset="">
+            <img src="{{asset('storage/' . App\Models\Setting::get('hero_image_path'))}}" class="img-thumbnail img-fluid" style="max-height: 50vh" alt="" srcset="">
         @endif
     </div>
     <div class="form-group mb-4">

@@ -41,7 +41,15 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::middleware(['auth'])->group(function() {
-    
+    Route::get('/linkedin-posts', [App\Http\Controllers\LinkedinPostController::class, 'index'])->name('linkedin-posts.list');
+    Route::get('/linkedin-posts/create', [App\Http\Controllers\LinkedinPostController::class, 'create'])->name('linkedin-posts.create');
+    Route::post('/linkedin-posts/store', [App\Http\Controllers\LinkedinPostController::class, 'store'])->name('linkedin-posts.store');
+    Route::post('/linkedin-posts/destroy/{linkedinPost}', [App\Http\Controllers\LinkedinPostController::class, 'destroy'])->name('linkedin-posts.destroy');
+
+    Route::get('/linkedin-posts/edit/{linkedinPost}', [App\Http\Controllers\LinkedinPostController::class, 'edit'])->name('linkedin-posts.edit');
+    Route::post('/linkedin-posts/update/{linkedinPost}', [App\Http\Controllers\LinkedinPostController::class, 'update'])->name('linkedin-posts.update');
+
+
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::get('/settings', [App\Http\Controllers\SettingController::class, 'index'])->name('settings');
     Route::post('/settings', [App\Http\Controllers\SettingController::class, 'update'])->name('settings.edit');

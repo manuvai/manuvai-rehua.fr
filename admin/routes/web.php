@@ -48,6 +48,9 @@ Route::middleware(['auth'])->group(function() {
 
     Route::get('/linkedin-posts/edit/{linkedinPost}', [App\Http\Controllers\LinkedinPostController::class, 'edit'])->name('linkedin-posts.edit');
     Route::post('/linkedin-posts/update/{linkedinPost}', [App\Http\Controllers\LinkedinPostController::class, 'update'])->name('linkedin-posts.update');
+    
+    Route::post('/linkedin-posts/media/store', [App\Http\Controllers\LinkedinPostController::class, 'storeMedia'])->name('linkedin-posts.media.store');
+    Route::post('/linkedin-posts/media/destroy/{linkedinMediaPost}', [App\Http\Controllers\LinkedinPostController::class, 'destroyMedia'])->name('linkedin-posts.media.destroy');
 
 
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

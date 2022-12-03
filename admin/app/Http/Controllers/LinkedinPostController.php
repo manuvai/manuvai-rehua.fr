@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\LinkedinMediaPost;
 use App\Models\LinkedinPost;
 use Illuminate\Http\Request;
 
@@ -14,9 +15,6 @@ class LinkedinPostController extends Controller
      */
     public function index()
     {
-        // TODO Ajouter le model de données pour les Images Linkedin
-        // TODO Ajouter la gestion des images rattachées au post linkedin
-
         // TODO Permettre de lancer la publication si l'intervalle entre la dernière publication et la date du jour dépasse l'intervalle défini
         // TODO Créer le CRON de table
         return view('linkedin-posts.list');
@@ -32,6 +30,30 @@ class LinkedinPostController extends Controller
     public function create()
     {
         return view('linkedin-posts/create', ['linkedinPost' => new LinkedinPost()]);
+    }
+
+    public function storeMedia(Request $request) {
+        $request->validate([
+            'media_file' => 'nullable|mimes:jpg,jpeg,png|max:2048',
+        ]);
+
+        $mediaPost = new LinkedinMediaPost();
+        $mediaPost->title = $request->title;
+        $mediaPost->description = $request->description;
+        $mediaPost->post_id = $request->post_id;
+        $mediaPost->path = self::storeFile($request, 'media_file');
+        $mediaPost->save();
+        return redirect(route('linkedin-posts.edit', ['linkedinPost' => $request->post_id]));
+
+    }
+
+    private static function storeFile($req, $key, $fileName = null) {
+        if (is_null($fileName)) {
+            $fileName = $req->file($key)->getClientOriginalName();
+            $fileName = md5_file($fileName);
+        }
+        $filePath = $req->file($key)->storeAs('uploads', $fileName, 'public');
+        return $filePath;
     }
 
     /**
@@ -99,5 +121,18 @@ class LinkedinPostController extends Controller
     {
         $linkedinPost->delete();
         return redirect(route('linkedin-posts.list'));
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\LinkedinPost  $linkedinPost
+     * @return \Illuminate\Http\Response
+     */
+    public function destroyMedia(LinkedinMediaPost $linkedinMediaPost)
+    {
+        $linkedinPostID = $linkedinMediaPost->post_id;
+        $linkedinMediaPost->delete();
+        return redirect(route('linkedin-posts.edit', ['linkedinPost' => $linkedinPostID]));
     }
 }

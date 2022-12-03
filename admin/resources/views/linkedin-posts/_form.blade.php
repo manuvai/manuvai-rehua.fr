@@ -23,5 +23,8 @@
     </div>
     <button type="submit" class="btn btn-primary">@yield('button_form_text')</button>
 </form>
+@if ($linkedinPost->id)
+    @include('linkedin-posts.media.part')
+@endif
 
 @endsection

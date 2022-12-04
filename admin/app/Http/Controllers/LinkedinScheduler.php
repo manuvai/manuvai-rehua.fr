@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Helpers\LinkedinPublisher;
 use App\Models\LinkedinPost;
 use App\Models\Setting;
+use Carbon\Carbon;
 
 class LinkedinScheduler extends Controller
 {
@@ -33,8 +34,15 @@ class LinkedinScheduler extends Controller
         );
 
         $curlPost = $this->publishPost($postToPublish, $linkedinPublisher, $formattedPost);
-        dd($curlPost);
+        $this->updatePost($postToPublish);
         
+    }
+
+    private function updatePost(LinkedinPost $linkedinPost) {
+        $linkedinPost->state = 'published';
+        $linkedinPost->published_date = Carbon::now();
+        $linkedinPost->update();
+
     }
 
     private function publishPost($postToPublish, $linkedinPublisher, $formattedPost) {

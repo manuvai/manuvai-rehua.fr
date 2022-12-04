@@ -214,8 +214,8 @@ class LinkedinPublisher
             ],
         ];
         $prepareReponse = $this->curl($prepareUrl, json_encode($prepareRequest), "application/json");
-        $uploadURL = json_decode($prepareReponse)->value->uploadMechanism->{"com.linkedin.digitalmedia.uploading.MediaUploadHttpRequest"}->uploadUrl;
-        $asset_id = json_decode($prepareReponse)->value->asset;
+        $uploadURL = json_decode($prepareReponse)->{"value"}->{"uploadMechanism"}->{"com.linkedin.digitalmedia.uploading.MediaUploadHttpRequest"}->{"uploadUrl"};
+        $asset_id = json_decode($prepareReponse)->{"value"}->{"asset"};
         $responseInfos['asset_id'] = $asset_id;
 
         $client = new Client();

@@ -49,8 +49,13 @@ class LinkedinPostController extends Controller
 
     private static function storeFile($req, $key, $fileName = null) {
         if (is_null($fileName)) {
-            $fileName = $req->file($key)->getClientOriginalName();
-            $fileName = md5_file($fileName);
+            $fileExtension = $req->file($key)->getClientOriginalExtension();
+            $fileName = md5(date('Y-m-d H:i:s:u'));
+            while (file_exists(storage_path() . 'app/public/' . $fileName)) {
+                $fileName = md5(date('Y-m-d H:i:s:u'));
+
+            }
+            $fileName = $fileName . '.'. $fileExtension;
         }
         $filePath = $req->file($key)->storeAs('uploads', $fileName, 'public');
         return $filePath;

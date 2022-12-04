@@ -37,6 +37,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/linkedin-scheduler/{accessToken}', [App\Http\Controllers\LinkedinScheduler::class, 'index']);
 
 Auth::routes();
 

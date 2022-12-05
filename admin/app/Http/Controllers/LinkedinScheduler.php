@@ -123,7 +123,7 @@ class LinkedinScheduler extends Controller
     }
 
     public function findPostToPublish(): ?LinkedinPost {
-        $posts = LinkedinPost::where('state', 'ready')->get();
+        $posts = LinkedinPost::where('state', 'ready')->orderByRaw('RAND()')->get();
         return count($posts) > 0 ? $posts[0] : null;
     }
 }

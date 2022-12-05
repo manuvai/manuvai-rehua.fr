@@ -15,7 +15,7 @@ class LinkedinPost extends Model
     public const MULTIPLE_MEDIA_POST_TYPE = 4;
 
     public function medias() {
-        return $this->hasMany(LinkedinMediaPost::class, 'post_id');
+        return $this->hasMany(LinkedinMediaPost::class, 'post_id')->orderBy('created_at', 'asc');
     }
 
     public function getType() {

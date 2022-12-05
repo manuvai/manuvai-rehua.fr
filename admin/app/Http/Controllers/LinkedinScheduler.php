@@ -15,6 +15,10 @@ class LinkedinScheduler extends Controller
             return response('Bad request', 400);
         }
 
+        if ($this->isTimeToPublish()) {
+            return response('Already published', 200);
+        }
+
         $postToPublish = $this->findPostToPublish();
 
         if (is_null($postToPublish)) {
@@ -36,6 +40,15 @@ class LinkedinScheduler extends Controller
         $curlPost = $this->publishPost($postToPublish, $linkedinPublisher, $formattedPost);
         $this->updatePost($postToPublish);
         
+    }
+
+    private function isTimeToPublish() {
+        return LinkedinPost::whereRaw(
+            'DATEDIFF(NOW(), created_at) > ?', 
+            (int) Setting::get('linkedin_publish_interval_days')
+        )
+            ->where('state', 'ready')
+            ->count() > 0;
     }
 
     private function updatePost(LinkedinPost $linkedinPost) {

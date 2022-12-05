@@ -11,7 +11,7 @@ class LinkedinScheduler extends Controller
 {
 
     public function index(string $accessToken) {
-        if ($accessToken != Setting::get('linkedin_access_token')) {
+        if ($accessToken != Setting::get('linkedin_profile_id')) {
             return response('Bad request', 400);
         }
 

@@ -6,6 +6,7 @@ use App\Helpers\LinkedinPublisher;
 use App\Models\LinkedinPost;
 use App\Models\Setting;
 use Carbon\Carbon;
+use DateTime;
 
 class LinkedinScheduler extends Controller
 {
@@ -15,7 +16,7 @@ class LinkedinScheduler extends Controller
             return response('Bad request', 400);
         }
 
-        if ($this->isTimeToPublish()) {
+        if (!$this->isTimeToPublish()) {
             return response('Already published', 200);
         }
 
@@ -43,12 +44,27 @@ class LinkedinScheduler extends Controller
     }
 
     private function isTimeToPublish() {
-        return LinkedinPost::whereRaw(
-            'DATEDIFF(NOW(), created_at) > ?', 
-            (int) Setting::get('linkedin_publish_interval_days')
-        )
-            ->where('state', 'ready')
-            ->count() > 0;
+        $toPublish = false;
+        $nbPostPublished = LinkedinPost::whereNotNull('published_date')->count();
+
+        // si aucun post n'a été publié
+        if ($nbPostPublished <= 0) {
+            $toPublish = true;
+        } else {
+            
+            // sinon si la date de publication du dernier et l'intervalle est cohérent
+            $lastPost = LinkedinPost::where('state', 'published')
+                ->orderBy('published_date', 'DESC')
+                ->get()[0];
+                
+            $publishedDate = new DateTime($lastPost->published_date);
+            $nowDate = new DateTime(date("Y-m-d"));
+            $daysPassed = (int) $nowDate->diff($publishedDate)->format('%a');
+            $toPublish = $daysPassed >= Setting::get('linkedin_publish_interval_days');
+        }
+
+        return $toPublish;
+            
     }
 
     private function updatePost(LinkedinPost $linkedinPost) {

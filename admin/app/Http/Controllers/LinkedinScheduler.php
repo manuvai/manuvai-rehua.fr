@@ -74,7 +74,7 @@ class LinkedinScheduler extends Controller
 
     }
 
-    private function publishPost($postToPublish, $linkedinPublisher, $formattedPost) {
+    private function publishPost($postToPublish, LinkedinPublisher $linkedinPublisher, $formattedPost) {
         $curlResponse = null;
         switch ($postToPublish->getType()) {
             case LinkedinPost::SINGLE_MEDIA_POST_TYPE:

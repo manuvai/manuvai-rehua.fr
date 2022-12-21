@@ -17,6 +17,7 @@ class LinkedinPostController extends Controller
     {
         // TODO Permettre de lancer la publication si l'intervalle entre la dernière publication et la date du jour dépasse l'intervalle défini
         // TODO Créer le CRON de table
+        // TODO Prévoir un système de logging -> Discord ? Email ?
         return view('linkedin-posts.list');
 
         
@@ -34,7 +35,7 @@ class LinkedinPostController extends Controller
 
     public function storeMedia(Request $request) {
         $request->validate([
-            'media_file' => 'nullable|mimes:jpg,jpeg,png|max:2048',
+            'media_file' => 'nullable|mimes:jpg,jpeg,png,pdf|max:2048',
         ]);
 
         $mediaPost = new LinkedinMediaPost();

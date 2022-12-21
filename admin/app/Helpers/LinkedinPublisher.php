@@ -91,6 +91,72 @@ class LinkedinPublisher
         return $post;
     }
 
+    public function postPDF($message, $doc_path, $doc_title, $doc_description, $visibility = "PUBLIC") {
+        // FIXME Corriger cette partie
+        return;
+        
+        $prepareUrl = $this->getAssetsURL();
+        $prepareRequest =  [
+            "registerUploadRequest" => [
+                "recipes" => [
+                    "urn:li:digitalmediaRecipe:feedshare-document"
+                ],
+                "owner" => "urn:li:person:" . $this->personID,
+                "serviceRelationships" => [
+                    [
+                        "relationshipType" => "OWNER",
+                        "identifier" => "urn:li:userGeneratedContent"
+                    ],
+                ],
+            ],
+        ];
+        $prepareReponse = $this->curl($prepareUrl, json_encode($prepareRequest), "application/json");
+        dd($prepareReponse);
+        $uploadURL = json_decode($prepareReponse)->value->uploadMechanism->{"com.linkedin.digitalmedia.uploading.MediaUploadHttpRequest"}->uploadUrl;
+        $asset_id = json_decode($prepareReponse)->value->asset;
+        $client = new Client();
+        $response = $client->request('PUT', $uploadURL, [
+            'headers' => ['Authorization' => 'Bearer ' . $this->accessToken],
+            'body' => fopen($doc_path, 'r'),
+            'verify' => $this->ssl
+        ]);
+        
+
+        $post_url = $this->getApiURL('shares');
+        $request = [
+            "author" => "urn:li:person:" . $this->personID,
+            "lifecycleState" => "PUBLISHED",
+            "specificContent" => [
+                "com.linkedin.ugc.ShareContent" => [
+                    "shareCommentary" => [
+                        "text" => $message
+                    ],
+                    "shareMediaCategory" => "NATIVE_DOCUMENT",
+                    "media" => [[
+                        "status" => "READY",
+                        "description" => [
+                            "text" => substr($doc_description, 0, 200),
+                        ],
+                        "media" =>  $asset_id,
+
+                        "title" => [
+                            "text" => $doc_title,
+                        ],
+                    ]],
+                ],
+
+            ],
+            "visibility" => [
+                "com.linkedin.ugc.MemberNetworkVisibility" => $visibility,
+            ]
+        ];
+        $post = $this->curl($post_url, json_encode($request), "application/json");
+        dd($post);
+
+        return $post;
+
+    }
+
     public function postPhoto($message, $image_path, $image_title, $image_description, $visibility = "PUBLIC")
     {
 

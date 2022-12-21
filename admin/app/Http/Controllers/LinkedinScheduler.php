@@ -39,8 +39,7 @@ class LinkedinScheduler extends Controller
         );
 
         $curlPost = $this->publishPost($postToPublish, $linkedinPublisher, $formattedPost);
-        $this->updatePost($postToPublish);
-        
+        // $this->updatePost($postToPublish);
     }
 
     private function isTimeToPublish() {
@@ -86,6 +85,16 @@ class LinkedinScheduler extends Controller
                 );
 
                 break;
+            case LinkedinPost::DOCUMENT_POST_TYPE:
+                $curlResponse = $linkedinPublisher->postPDF(
+                    $formattedPost['message'],
+                    $formattedPost['pdf_path'],
+                    $formattedPost['pdf_title'],
+                    $formattedPost['pdf_description'],
+                );
+                dd($curlResponse);
+
+                break;
                 
             case LinkedinPost::MULTIPLE_MEDIA_POST_TYPE:
                 $curlResponse = $linkedinPublisher->postMultiplePhotos(
@@ -119,6 +128,15 @@ class LinkedinScheduler extends Controller
                     'image_path' => storage_path('app/public/' . $linkedinPost->medias[0]->path),
                     'image_title' => $linkedinPost->medias[0]->title,
                     'image_description' => $linkedinPost->medias[0]->description,
+                ];
+                break;
+
+            case LinkedinPost::DOCUMENT_POST_TYPE:
+                return [
+                    'message' => $linkedinPost->description,
+                    'pdf_path' => storage_path('app/public/' . $linkedinPost->medias[0]->path),
+                    'pdf_title' => $linkedinPost->medias[0]->title,
+                    'pdf_description' => $linkedinPost->medias[0]->description,
                 ];
                 break;
 

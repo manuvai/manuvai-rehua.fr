@@ -14,6 +14,10 @@
         <textarea class="form-control" name="description" id="linkedin_badge" placeholder="Description">{{$linkedinPost->description}}</textarea>
     </div>
     <div class="form-group mb-4">
+        <label for="scheduled_date">Date souhaitée de publication</label>
+        <input type="date" value="{{$linkedinPost->scheduled_date}}" class="form-control" name="scheduled_date" id="linkedin_badge" placeholder="Titre">
+    </div>
+    <div class="form-group mb-4">
         <label for="state">Statut de la publication</label>
         <select name="state" class="form-control" id="state">
             <option value="draft" {{(($linkedinPost->state == 'draft') ? 'selected' : '')}}>Brouillon</option>

@@ -73,6 +73,7 @@ class LinkedinPostController extends Controller
         $linkedinPost = new LinkedinPost();
         $linkedinPost->title = $request->title;
         $linkedinPost->description = $request->description;
+        $linkedinPost->scheduled_date = $request->scheduled_date;
         $linkedinPost->state = $request->state;
         $linkedinPost->save();
         return redirect(route('linkedin-posts.list'));
@@ -111,6 +112,7 @@ class LinkedinPostController extends Controller
     {
         $linkedinPost->title = $request->title;
         $linkedinPost->description = $request->description;
+        $linkedinPost->scheduled_date = $request->scheduled_date;
         $linkedinPost->state = $request->state;
         $linkedinPost->update();
 

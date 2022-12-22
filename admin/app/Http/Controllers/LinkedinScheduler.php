@@ -39,7 +39,7 @@ class LinkedinScheduler extends Controller
         );
 
         $curlPost = $this->publishPost($postToPublish, $linkedinPublisher, $formattedPost);
-        // $this->updatePost($postToPublish);
+        $this->updatePost($postToPublish);
     }
 
     private function isTimeToPublish() {
@@ -48,18 +48,36 @@ class LinkedinScheduler extends Controller
 
         // si aucun post n'a été publié
         if ($nbPostPublished <= 0) {
-            $toPublish = true;
+            $toPublish = !$toPublish;
         } else {
+            // sinon si la date prévue de publication est passée ou le jour actuel
+            $scheduledPosts = LinkedinPost::where('state', 'ready')
+                ->whereNotNull('scheduled_date')
+                ->orderBy('scheduled_date', 'ASC')
+                ->get();
+
+            if (count($scheduledPosts) > 0) {
+                $scheduledDate = new DateTime($scheduledPosts[0]->scheduled_date);
+                $nowDate = new DateTime(date("Y-m-d"));
+                $daysPassed = (int) $nowDate->diff($scheduledDate)->format('%a');
+                if ($daysPassed <= 0) {
+                    $toPublish = !$toPublish;
+                }
+            }
+
+            if (!$toPublish) {
+                // sinon si la date de publication du dernier et l'intervalle est cohérent
+                $lastPost = LinkedinPost::where('state', 'published')
+                    ->orderBy('published_date', 'DESC')
+                    ->get()[0];
+                    
+                $publishedDate = new DateTime($lastPost->published_date);
+                $nowDate = new DateTime(date("Y-m-d"));
+                $daysPassed = (int) $nowDate->diff($publishedDate)->format('%a');
+                $toPublish = $daysPassed >= Setting::get('linkedin_publish_interval_days');
+
+            }
             
-            // sinon si la date de publication du dernier et l'intervalle est cohérent
-            $lastPost = LinkedinPost::where('state', 'published')
-                ->orderBy('published_date', 'DESC')
-                ->get()[0];
-                
-            $publishedDate = new DateTime($lastPost->published_date);
-            $nowDate = new DateTime(date("Y-m-d"));
-            $daysPassed = (int) $nowDate->diff($publishedDate)->format('%a');
-            $toPublish = $daysPassed >= Setting::get('linkedin_publish_interval_days');
         }
 
         return $toPublish;
@@ -170,7 +188,25 @@ class LinkedinScheduler extends Controller
     }
 
     public function findPostToPublish(): ?LinkedinPost {
-        $posts = LinkedinPost::where('state', 'ready')->orderByRaw('RAND()')->get();
-        return count($posts) > 0 ? $posts[0] : null;
+        $postToPublish = null;
+        // si la date prévue de publication est passée ou le jour actuel
+        $scheduledPosts = LinkedinPost::where('state', 'ready')
+            ->whereNotNull('scheduled_date')
+            ->orderBy('scheduled_date', 'ASC')
+            ->get();
+
+        if (count($scheduledPosts) > 0) {
+            $scheduledDate = new DateTime($scheduledPosts[0]->scheduled_date);
+            $nowDate = new DateTime(date("Y-m-d"));
+            $daysPassed = (int) $nowDate->diff($scheduledDate)->format('%a');
+            if ($daysPassed <= 0) {
+                $postToPublish = $scheduledPosts[0];
+            }
+        }
+        if (!is_null($postToPublish)) {
+            $posts = LinkedinPost::where('state', 'ready')->orderByRaw('RAND()')->get();
+            $postToPublish = count($posts) > 0 ? $posts[0] : null;
+        }
+        return $postToPublish;
     }
 }

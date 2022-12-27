@@ -203,7 +203,7 @@ class LinkedinScheduler extends Controller
                 $postToPublish = $scheduledPosts[0];
             }
         }
-        if (!is_null($postToPublish)) {
+        if (is_null($postToPublish)) {
             $posts = LinkedinPost::where('state', 'ready')
                 ->whereNull('scheduled_date')
                 ->orderByRaw('RAND()')

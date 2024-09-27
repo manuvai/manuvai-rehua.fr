@@ -6,9 +6,9 @@ img_alt: Le Jeu du pendu de Vodafone Polynésie
 description: |
   Le Jeu du pendu de Vodafone Polynésie
 tags:
-  - Java
-  - Spring Boot
-  - Maven
+  - PHP
+  - MySQL
+  - Javascript
 ---
 
 ## Jeu du pendu

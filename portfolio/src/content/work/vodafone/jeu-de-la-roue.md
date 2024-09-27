@@ -6,9 +6,10 @@ img_alt: Le Jeu de la roue de Vodafone Polynésie
 description: |
   Le Jeu de la roue de Vodafone Polynésie
 tags:
-  - Java
-  - Spring Boot
-  - Maven
+  - PHP
+  - API
+  - jQuery
+  - Bootstrap
 ---
 
 ## Jeu de la roue

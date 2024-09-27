@@ -6,9 +6,11 @@ img_alt: Application click & collect
 description: |
   Le catalogue mobiles de Vodafone Polynésie
 tags:
-  - Java
-  - Spring Boot
-  - Maven
+  - PJP
+  - jQuery
+  - VueJS
+  - MySQL
+  - Bootstrap
 ---
 
 ## Catalogue Mobiles

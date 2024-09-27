@@ -1,14 +1,14 @@
 ---
 title: MyAnimeList
-publishDate: 2022-01-06 00:00:00
+publishDate: 2020-01-06 00:00:00
 img: https://admin.manuvai-rehua.fr/storage/uploads/anime-list.gif
 img_alt: La plateforme de recensement des animes
 description: |
   La plateforme de recensement des animes
 tags:
-  - Java
-  - Spring Boot
-  - Maven
+  - PHP
+  - MySQL
+  - Bootstrap
 ---
 
 ## Formulaire VCRT

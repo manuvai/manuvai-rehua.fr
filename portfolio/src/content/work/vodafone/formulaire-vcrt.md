@@ -6,9 +6,10 @@ img_alt: Le Formulaire VCRT de Vodafone Polynésie
 description: |
   Le Formulaire VCRT de Vodafone Polynésie
 tags:
-  - Java
-  - Spring Boot
-  - Maven
+  - PHP
+  - API
+  - jQuery
+  - Bootstrap
 ---
 
 ## Formulaire VCRT

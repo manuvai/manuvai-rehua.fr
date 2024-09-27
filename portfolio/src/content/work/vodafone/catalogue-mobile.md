@@ -2,7 +2,7 @@
 title: Catalogue Mobiles
 publishDate: 2022-01-10 00:00:00
 img: https://admin.manuvai-rehua.fr/storage/uploads/ezgif-4-722e5a8887.gif
-img_alt: Application click & collect
+img_alt: Catalogue mobiles
 description: |
   Le catalogue mobiles de Vodafone Polynésie
 tags:

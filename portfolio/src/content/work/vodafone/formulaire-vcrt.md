@@ -4,7 +4,7 @@ publishDate: 2022-01-07 00:00:00
 img: https://admin.manuvai-rehua.fr/storage/uploads/formulaire-vcrt.png
 img_alt: Le Formulaire VCRT de Vodafone Polynésie
 description: |
-  Le Formulaire VCRT de Vodafone Polynésie
+  Le Formulaire de participation à la course annuel de Vodafone Polynésie
 tags:
   - PHP
   - API

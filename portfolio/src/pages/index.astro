@@ -21,6 +21,56 @@ const projects = (await getCollection("work"))
 	.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
 	.slice(0, 4);
 
+const skills: { title: string; img: string }[] = [
+	{
+		img: "https://static-00.iconduck.com/assets.00/spring-icon-256x256-2efvkvky.png",
+		title: "Spring Boot",
+	},
+	{
+		img: "https://admin.manuvai-rehua.fr/storage/uploads/58482acecef1014c0b5e4a1e.png",
+		title: "VueJS",
+	},
+	{
+		img: "https://admin.manuvai-rehua.fr/storage/uploads/html5-logo-31813.png",
+		title: "HTML",
+	},
+	{
+		img: "https://admin.manuvai-rehua.fr/storage/uploads/javascript-39417.png",
+		title: "Javascript",
+	},
+	{
+		img: "https://admin.manuvai-rehua.fr/storage/uploads/logo-mysql-26300.png",
+		title: "MySQL",
+	},
+	{
+		img: "https://admin.manuvai-rehua.fr/storage/uploads/584815fdcef1014c0b5e497a.png",
+		title: "PostgreSQL",
+	},
+	{
+		img: "https://admin.manuvai-rehua.fr/storage/uploads/584817d6cef1014c0b5e4999.png",
+		title: "Oracle",
+	},
+	{
+		img: "https://admin.manuvai-rehua.fr/storage/uploads/github_PNG40.png",
+		title: "Github",
+	},
+	{
+		img: "https://admin.manuvai-rehua.fr/storage/uploads/58480979cef1014c0b5e4901.png",
+		title: "Java",
+	},
+	{
+		img: "https://admin.manuvai-rehua.fr/storage/uploads/SeekPng.com_php-png-logo_2582840.png",
+		title: "Composer",
+	},
+	{
+		img: "https://admin.manuvai-rehua.fr/storage/uploads/python.png",
+		title: "Python",
+	},
+	{
+		img: "https://admin.manuvai-rehua.fr/storage/uploads/Git-Icon-1788C.png",
+		title: "Git",
+	},
+].slice(0, 9);
 // Full Astro Component Syntax:
 // https://docs.astro.build/basics/astro-components/
 ---
@@ -91,26 +141,22 @@ const projects = (await getCollection("work"))
 
 			<section class="section with-background bg-variant">
 				<header class="section-header stack gap-2 lg:gap-4">
-					<h3>Mentions</h3>
-					<p>
-						I have been fortunate enough to receive praise for my
-						work in several publications. Take a look below to learn
-						more.
-					</p>
+					<h3>Compétences</h3>
 				</header>
 
 				<div class="gallery">
 					<Grid variant="small">
 						{
-							[
-								"Medium",
-								"BuzzFeed",
-								"The Next Web",
-								"awwwards.",
-								"TechCrunch",
-							].map((brand) => (
+							skills.map(({ title, img }) => (
 								<li class="mention-card">
-									<p>{brand}</p>
+									<p>
+										<img
+											width="96"
+											height="96"
+											src={img}
+											alt={title}
+										/>
+									</p>
 								</li>
 							))
 						}

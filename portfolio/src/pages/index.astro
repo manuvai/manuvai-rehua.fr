@@ -112,6 +112,30 @@ const skills: { title: string; img: string }[] = [
 		</div>
 
 		<main class="wrapper stack gap-20 lg:gap-48">
+			<section class="section with-background bg-variant">
+				<header class="section-header stack gap-2 lg:gap-4">
+					<h3>Compétences</h3>
+				</header>
+
+				<div class="gallery">
+					<Grid variant="small">
+						{
+							skills.map(({ title, img }) => (
+								<li class="mention-card">
+									<p>
+										<img
+											width="96"
+											height="96"
+											src={img}
+											alt={title}
+										/>
+									</p>
+								</li>
+							))
+						}
+					</Grid>
+				</div>
+			</section>
 			<section class="section with-background with-cta">
 				<header class="section-header stack gap-2 lg:gap-4">
 					<h3>Mes derniers projets</h3>
@@ -138,31 +162,6 @@ const skills: { title: string; img: string }[] = [
 						Tous les projets
 						<Icon icon="arrow-right" size="1.2em" />
 					</CallToAction>
-				</div>
-			</section>
-
-			<section class="section with-background bg-variant">
-				<header class="section-header stack gap-2 lg:gap-4">
-					<h3>Compétences</h3>
-				</header>
-
-				<div class="gallery">
-					<Grid variant="small">
-						{
-							skills.map(({ title, img }) => (
-								<li class="mention-card">
-									<p>
-										<img
-											width="96"
-											height="96"
-											src={img}
-											alt={title}
-										/>
-									</p>
-								</li>
-							))
-						}
-					</Grid>
 				</div>
 			</section>
 		</main>

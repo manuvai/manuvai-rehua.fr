@@ -12,4 +12,14 @@ export const collections = {
 			img_alt: z.string().optional(),
 		}),
 	}),
+	testimonial: defineCollection({
+		type: 'content',
+		schema: z.object({
+			name: z.string(),
+			publishDate: z.coerce.date(),
+			img: z.string(),
+			img_alt: z.string().optional(),
+			job: z.string(),
+		}),
+	}),
 };
